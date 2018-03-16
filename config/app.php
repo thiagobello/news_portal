@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        news_portal\Providers\AppServiceProvider::class,
+        news_portal\Providers\AuthServiceProvider::class,
+        // news_portal\Providers\BroadcastServiceProvider::class,
+        news_portal\Providers\EventServiceProvider::class,
+        news_portal\Providers\RouteServiceProvider::class,
 
     ],
 
