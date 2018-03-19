@@ -2340,6 +2340,11 @@ select.form-control-lg:not([size]):not([multiple]),
     margin-left: 0;
 }
 
+.form-align{
+    margin-right: 500px;
+    margin-left: 500px;
+}
+
 .valid-feedback {
     display: none;
     width: 100%;
@@ -4088,10 +4093,6 @@ tbody.collapse.show {
 
 .nav-tabs {
     border-bottom: 1px solid #dee2e6;
-}
-
-.nav-item-right{
-    align-items: right;
 }
 
 .nav-tabs .nav-item {
@@ -16395,6 +16396,24 @@ footer {
     /* Safari */
     /* Safari 6.1+ */
     display: flex;
+}
+
+.footer-black {
+    background: #232323;
+    background: -moz-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #585858), color-stop(100%, #232323));
+    /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    /* IE10+ */
+    background: radial-gradient(ellipse at center, #585858 0%, #232323 100%);
+    /* W3C */
+    background-size: 550% 450%;
+    color: white;
 }
 
 footer ul {

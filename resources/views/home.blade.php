@@ -61,9 +61,28 @@
         </nav>
     </div>
 
-
-
     @yield('text')
+
+    <footer class="footer footer-black">
+        <div class="container">
+            <a class="footer-brand" href="#home"> Portal</a>
+            <ul class="pull-center">
+                <li>
+                    <a href="#home" >Test</a>
+                </li>
+            </ul>
+            <ul class="social-butons pull-right">
+                <li>
+                    <a href="" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-twitter">
+                            
+                        </i>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="/assets/js/core/jquery.min.js"></script>
     <script src="/assets/js/core/popper.min.js"></script>
