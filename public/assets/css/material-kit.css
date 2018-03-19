@@ -11045,7 +11045,7 @@ label {
 
 .form-group.is-focused .form-check .form-check-label:hover,
 .form-group.is-focused .form-check .form-check-label:focus {
-    color: rgba(0, 0, 0, .54);
+    color: rgba(0, 0, 0, .54); 
 }
 
 fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
