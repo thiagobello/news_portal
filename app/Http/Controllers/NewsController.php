@@ -14,11 +14,17 @@ class NewsController extends Controller
     public function create(NewsRequest $request)
     {
 		News::create($request->all());
-        return view('news');
+		return view('create-news');
     }
 
     public function list()
     {
-    	return view('news');
+    	return view('create-news');
+    }
+
+    public function view($id)
+    {
+    	$vn = News::find($id);
+    	return view('view-news')->with('n',$vn);
     }
 }

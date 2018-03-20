@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layout')
 
 @section('text')
 
@@ -27,7 +27,7 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Noticia</label>
-    <textarea name="notice" class="form-control" rows="3" value="{{old('notice')}}"></textarea>
+    <textarea name="notice" class="form-control" value="{{old('notice')}}"></textarea>
   </div>
 
   <button type="submit" class="btn btn-info">Publicar</button>

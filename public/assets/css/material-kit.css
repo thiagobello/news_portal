@@ -2340,11 +2340,18 @@ select.form-control-lg:not([size]):not([multiple]),
     margin-left: 0;
 }
 
+/*CLASSES CRIADAS */
 .form-align{
     margin-right: 500px;
     margin-left: 500px;
 }
 
+.news-align{
+    margin-right: 300px;
+    margin-left: 300px
+}
+
+/*---------------------------*/
 .valid-feedback {
     display: none;
     width: 100%;

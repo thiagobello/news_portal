@@ -20,7 +20,16 @@ class NewsRequest extends FormRequest
             'category_id' => 'required|numeric',
             'title' => 'required|min:3',
             'date' => 'required|max:255',
-            'notice' => 'required|max:255'
+            'notice' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return
+        [
+            'required' => 'O :attribute é obrigatório!',
+            'max' => 'error'
         ];
     }
 }

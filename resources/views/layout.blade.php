@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a href="#pablo" class="nav-link">link</a>
+                        <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
                     </li>
                     <li class="nav-item">
                         <a href="#pablo" class="nav-link">link</a>
