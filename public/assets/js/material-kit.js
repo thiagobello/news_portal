@@ -233,6 +233,8 @@ materialKit = {
 
             }
         });
+
+        
     },
 
 
@@ -424,6 +426,8 @@ var BrowserDetect = {
             identity: "Opera"
         }
     ]
+
+
 
 };
 

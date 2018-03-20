@@ -12,7 +12,7 @@
   <body>
 
     <div>
-        <ul class="nav nav-pills nav-pills-icons nav-pills-success" role="tablist">
+        <ul class="nav nav-pills nav-pills-icons nav-pills-info" role="tablist" style="justify-content: space-between;">
             <li class="nav-item">
                 <img src="/assets/img/esamc.png" align="center">
             </li>
