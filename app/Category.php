@@ -10,5 +10,9 @@ class Category extends Model
 	public $timestamps = false;
 
 
-	  
+	public function news()
+    {
+    	return $this->hasMany('\news_portal\News');
+    }
+  
 }

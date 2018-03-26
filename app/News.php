@@ -10,4 +10,9 @@ class News extends Model
     public $timestamps = false;
 
     protected $fillable = array('users_id','category_id','title','date','notice');
+
+	    public function category()
+	    {
+	    	return $this->belogsTo('\news_portal\Category');
+	    }
 }
