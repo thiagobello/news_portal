@@ -4,6 +4,7 @@ use Request;
 use DB;
 use Validator;
 use news_portal\News;
+use news_portal\Category;
 use news_portal\Http\Requests\NewsRequest;
 
 
@@ -14,12 +15,12 @@ class NewsController extends Controller
     public function create(NewsRequest $request)
     {
 		News::create($request->all());
-		return view('create-news');
+		return view('create-news')->with('category', Category::all());
     }
 
     public function list()
     {
-    	return view('create-news');
+    	return view('create-news')->with('category', Category::all());
     }
 
     public function view($id)

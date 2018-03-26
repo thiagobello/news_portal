@@ -13,8 +13,12 @@
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Categoria</label>
-     <input name="category_id" class="form-control" value="{{old('category_id')}}">
-     <span class="bmd-help">Digite a categoria.</span>
+     <select name="category_id" class="form-control">
+        @foreach($category as $c)
+        <option value="{{$c->id}}">{{$c->name}}</option>
+        @endforeach
+     </select>
+
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Título da Noticia</label>
