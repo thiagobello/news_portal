@@ -2,7 +2,7 @@
 
 @section('text')
 
-<form class="form-align" action="/noticias/criar" method="post">
+<form action="/noticias/criar" method="post">
 
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
 

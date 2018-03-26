@@ -61,7 +61,12 @@
         </nav>
     </div>
 
+<div class="form-align">
     @yield('text')
+</div>
+        
+            
+    
 
     <footer class="footer footer-black">
         <div class="container">
