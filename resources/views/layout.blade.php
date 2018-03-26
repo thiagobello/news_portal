@@ -37,6 +37,16 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+             <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{action('CategoryController@list')}}" class="nav-link">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pablo" class="nav-link">link</a>
+                    </li>
+                </ul>                       
+
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
