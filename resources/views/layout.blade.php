@@ -43,30 +43,21 @@
                         <a href="{{action('CategoryController@list')}}" class="nav-link">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#pablo" class="nav-link">link</a>
+                        <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
                     </li>
                 </ul>                       
 
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#pablo" class="nav-link">link</a>
-                    </li>
-                </ul>
-
-                <form class="form-inline ml-auto">
-                    <div class="form-group has-white">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini btn-round">
-                        <i class="material-icons">search</i>
-                    </button>
-                </form>
-            </div>
+                <div class="collapse navbar-collapse">
+                    <form class="form-inline ml-auto">
+                        <div class="form-group has-white">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini btn-round">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </nav>
     </div>
