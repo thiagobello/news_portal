@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/assets/css/material-kit.css">
+    <link rel="stylesheet" href="/assets/css/design-portal.css">
     <title>Portal de Noticias ESAMC</title>
   </head>
   <body>
@@ -30,7 +31,7 @@
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container">
                 <div class="navbar-translate">
-                    <a class="navbar-brand" href="/presentation.html">Home</a>
+                    <a class="navbar-brand" href="{{action('NewsController@feed')}}">Home</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
@@ -62,12 +63,9 @@
         </nav>
     </div>
 
-<div class="form-align">
+<div class="">
     @yield('text')
 </div>
-        
-            
-    
 
     <footer class="footer footer-black">
         <div class="container">
@@ -84,7 +82,6 @@
                             
                         </i>
                     </a>
-
                 </li>
             </ul>
         </div>

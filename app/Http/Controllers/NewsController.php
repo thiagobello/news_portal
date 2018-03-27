@@ -28,4 +28,9 @@ class NewsController extends Controller
     	$vn = News::find($id);
     	return view('view-news')->with('n',$vn);
     }
+
+    public function feed()
+    {
+        return  view('home');
+    }
 }
