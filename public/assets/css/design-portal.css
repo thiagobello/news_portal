@@ -1,28 +1,3 @@
-.form-align{
-	
-    margin-right: 300px;
-    margin-left: 300px;
-}
-
-.news-align{
-	border: 0px;
-	padding-left:  300px;
-	padding-right: 300px;
-
-}
-
-body {
-    padding-bottom: 40px;
-    padding-top: 60px;
-}
-
-.space-center
-{
-    position: absolute;
-    width:100%;
-}
-
-
 /* INICIO DO FEED DE NOTICIAS */
 
 .main {

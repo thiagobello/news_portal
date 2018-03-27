@@ -29,7 +29,7 @@ class NewsController extends Controller
     	return view('view-news')->with('n',$vn);
     }
 
-    public function feed()
+    public function home()
     {
         return  view('home');
     }

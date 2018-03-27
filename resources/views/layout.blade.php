@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container">
                 <div class="navbar-translate">
-                    <a class="navbar-brand" href="{{action('NewsController@feed')}}">Home</a>
+                    <a class="navbar-brand" href="{{action('NewsController@home')}}">Home</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
