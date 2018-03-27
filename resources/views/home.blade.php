@@ -6,7 +6,7 @@
   <section class="column">
 	
 	@foreach($news as $n)
-    <a class="article" href="#">
+    <a class="article" href="/noticias/{{$n->id}}">
       <figure class="article-image is-16by9">
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
       </figure>
@@ -20,6 +20,16 @@
       </div>
     </a>
     @endforeach
+
+    <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
 
   </section>
 

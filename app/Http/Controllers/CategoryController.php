@@ -11,7 +11,7 @@ class CategoryController extends Controller
 		return view('category') -> with('category', $category);
 	}
 
-public function new()
+	public function new()
 	{
 		$name = Request::input('name');
 
