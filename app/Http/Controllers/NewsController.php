@@ -31,6 +31,7 @@ class NewsController extends Controller
 
     public function home()
     {
-        return  view('home');
+        $news = DB::select('select * from news');
+        return  view('home') -> with('news', $news);
     }
 }

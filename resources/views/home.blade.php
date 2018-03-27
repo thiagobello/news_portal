@@ -4,46 +4,22 @@
 
 <main class="main columns">
   <section class="column">
-
+	
+	@foreach($news as $n)
     <a class="article" href="#">
       <figure class="article-image is-16by9">
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
       </figure>
       <div class="article-body">
-        <h2 class="article-title">
-          Hello World
-        </h2>
-        <p class="article-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content">{{$n->notice}}</p>
         <footer class="article-info">
-          <span>By Joe Smith</span>
+          <span>{{$n->date}}</span>
           <span>42 comments</span>
         </footer>
       </div>
     </a>
-
-    <a class="article" href="#">
-      <figure class="article-image is-16by9">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
-      </figure>
-      <div class="article-body">
-        <h2 class="article-title">
-          Hello World
-        </h2>
-        <p class="article-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <footer class="article-info">
-          <span>By Joe Smith</span>
-          <span>42 comments</span>
-        </footer>
-      </div>
-    </a>
+    @endforeach
 
   </section>
 
@@ -51,51 +27,7 @@
 
 
 
-  <section class="column">
 
-    <a class="article" href="#">
-      <figure class="article-image is-16by9">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
-      </figure>
-      <div class="article-body">
-        <h2 class="article-title">
-          Hello World
-        </h2>
-        <p class="article-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <footer class="article-info">
-          <span>By Joe Smith</span>
-          <span>42 comments</span>
-        </footer>
-      </div>
-    </a>
-
-    <a class="article" href="#">
-      <figure class="article-image is-16by9">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
-      </figure>
-      <div class="article-body">
-        <h2 class="article-title">
-          Hello World
-        </h2>
-        <p class="article-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <footer class="article-info">
-          <span>By Joe Smith</span>
-          <span>42 comments</span>
-        </footer>
-      </div>
-    </a>
-
-
-
-  </section>
 
 	<section class="column-right">
 		<a class="weatherwidget-io" href="https://forecast7.com/pt/n23d50n47d45/sorocaba/" data-label_1="SOROCABA" data-theme="original" >SOROCABA</a>
