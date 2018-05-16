@@ -114,8 +114,8 @@
 
 
 .central{
-  display: flex;
-  justify-content: center;
+margin-left: 10%;
+margin-right: 10%;
 }
 /* FIM DO FEED DE NOTICIAS */
 
