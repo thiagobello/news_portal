@@ -34,7 +34,8 @@
     <textarea name="notice" class="form-control" value="{{old('notice')}}"></textarea>
   </div>
 
-     <div class="form-group" id="summernote" value="{{old('notice')}}">
+     <div class="form-group" id="summernote">
+
      </div>
 
 

@@ -7,3 +7,6 @@ Route::get('/home','NewsController@home');
 Route::get('/categorias', 'CategoryController@list');
 Route::post('/categorias/adiciona', 'CategoryController@new');
 
+Route::get('/login', 'Auth\LoginController@form');
+Route::post('/login', 'Auth\LoginController@login');
+

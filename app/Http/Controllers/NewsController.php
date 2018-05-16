@@ -12,6 +12,11 @@ use news_portal\Http\Requests\NewsRequest;
 class NewsController extends Controller
 
 {
+ /*   public function _construct()
+    {
+        $this->middleware('Authorizer');        
+    }
+*/
     public function create(NewsRequest $request)
     {
 		News::create($request->all());
