@@ -5,6 +5,7 @@
 <main class="main columns">
   <section class="column">
 	
+
 	@foreach($news as $n)
     <a class="article" href="/noticias/{{$n->id}}">
       <figure class="article-image is-16by9">
@@ -20,24 +21,16 @@
       </div>
     </a>
     @endforeach
+    
 
-    <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-
+    
+    @if($news->hasMorePages())
+        <li><a href="{{ $news->nextPageUrl() }}" rel="next">&raquo;</a></li>
+    @else
+        <li class="disabled"><span>&raquo;</span></li>
+    @endif
   </section>
-
-
-
-
-
-
+    
 
 	<section class="column-right">
 		<a class="weatherwidget-io" href="https://forecast7.com/pt/n23d50n47d45/sorocaba/" data-label_1="SOROCABA" data-theme="original" >SOROCABA</a>
