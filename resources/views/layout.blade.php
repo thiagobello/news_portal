@@ -71,7 +71,7 @@
         </nav>
     </div>
 
-<div class="">
+<div class="central">
     @yield('text')
 </div>
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('text')
-<form class="form-align" action="/categoria/adiciona" method="post">
+<form class="form-align" action="/categorias/adiciona" method="post">
 
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
 
@@ -19,6 +19,5 @@
 		</tr>
 	@endforeach		
 </table>
-
 
 @stop

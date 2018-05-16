@@ -112,6 +112,11 @@
   }
 }
 
+
+.central{
+  display: flex;
+  justify-content: center;
+}
 /* FIM DO FEED DE NOTICIAS */
 
 

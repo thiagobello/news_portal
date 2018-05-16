@@ -21,7 +21,4 @@ class CategoryController extends Controller
 
 	}
 
-	public function assa(){
-		
-	}
 }	
