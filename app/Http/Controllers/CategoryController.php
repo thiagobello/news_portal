@@ -20,4 +20,5 @@ class CategoryController extends Controller
 		return view('category-new') -> with('name', $name);
 
 	}
+
 }	

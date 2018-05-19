@@ -34,6 +34,14 @@
     <textarea name="notice" class="form-control" value="{{old('notice')}}"></textarea>
   </div>
 
+     <div class="form-group" id="summernote">
+
+     </div>
+
+
+    <script>$('#summernote').summernote({tabsize: 2,height: 100});</script>
+
+
   <button type="submit" class="btn btn-info">Publicar</button>
 
 </form>
