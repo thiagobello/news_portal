@@ -6,4 +6,4 @@ Route::get('/noticias','NewsController@list');
 Route::get('/home','NewsController@home');
 Route::get('/categoria', 'CategoryController@list');
 Route::post('/categoria/adiciona', 'CategoryController@new');
-
+Route::get('/noticias/buscar/{txt}', 'NewsController@SearchNews');

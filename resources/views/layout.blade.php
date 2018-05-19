@@ -50,13 +50,13 @@
 
 
                 <div class="collapse navbar-collapse">
-                    <form class="form-inline ml-auto">
+                    <form action="/noticias/buscar/{txt}" class="form-inline ml-auto">
                         <div class="form-group has-white">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="post" name= 'txt' class="form-control" placeholder="Buscar">
                         </div>
-                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini btn-round">
+                            <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini btn-round">
                             <i class="material-icons">search</i>
-                        </button>
+                            </button>   
                     </form>
                 </div>
             </div>

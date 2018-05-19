@@ -26,6 +26,10 @@ class NewsController extends Controller
     public function view($id)
     {
     	$vn = News::find($id);
+        if($vn){
+            $vn->views++;
+            $vn ->save();
+        }
     	return view('view-news')->with('n',$vn);
     }
 
@@ -33,5 +37,16 @@ class NewsController extends Controller
     {
         $news = DB::select('select * from news');
         return  view('home') -> with('news', $news);
+    }
+
+    public function SearchNews(){
+       $txt = Request::input('txt');
+       $news = DB::table('news')->where('notice', 'like', '%' . $txt . '%')
+        ->orWhere('title', 'like', '%' . $txt . '%') ->get();
+        $error = "Nenhuma notícia foi encontrada!";
+        if (empty($news)) {
+            return view('search-news') -> with ('news', $error);
+        }
+       return view('search-news') -> with ('news', $news);
     }
 }
