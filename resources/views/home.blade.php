@@ -16,7 +16,7 @@
         <p class="article-content">{{$n->notice}}</p>
         <footer class="article-info">
           <span>{{$n->date}}</span>
-          <span>42 comments</span>
+          <span>{{$n->views}} Visitas</span>
         </footer>
       </div>
     </a>

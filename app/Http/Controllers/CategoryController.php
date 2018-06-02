@@ -5,6 +5,11 @@ use Request;
 
 class CategoryController extends Controller
 {
+	public function categoria(){
+
+		return view ('category');
+	}
+
 	public function list()
 	{
 		$category = DB::select('select * from category');
