@@ -54,6 +54,9 @@
                     <li class="nav-item">
                         <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
                     </li>
+                      <li class="nav-item">
+                        <a href="{{action('NewsController@MostAcessed')}}" class="nav-link">Mais Acessadas</a>
+                    </li>
                 </ul>                       
 
 

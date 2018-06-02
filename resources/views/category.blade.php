@@ -16,6 +16,10 @@
 	@foreach ($category as $c)
 		<tr> 
 			<td> {{$c-> name}}</td>
+      <td> <button type="submit" class="btn btn-info">
+        <a href="{{action('CategoryController@Details')}}" class="nav-link">Detalhes</a>
+          </button> 
+      </td>
 		</tr>
 	@endforeach		
 </table>

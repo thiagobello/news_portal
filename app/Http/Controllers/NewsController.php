@@ -44,7 +44,7 @@ class NewsController extends Controller
         return  view('home') -> with('news', $news);
     }
 
-<<<<<<< HEAD
+
     public function SearchNews(){
        $txt = Request::input('txt');
        $news = DB::table('news')->where('notice', 'like', '%' . $txt . '%')
@@ -55,6 +55,10 @@ class NewsController extends Controller
         }
        return view('search-news') -> with ('news', $news);
     }
-=======
->>>>>>> 236486211212ca573989c8e1a64b0b04826901fc
-}
+
+    public function MostAcessed(){
+        $news = DB::table('news') ->orderBy('views', 'desc') ->get();
+        return view('most-acessed') ->with ('news', $news);
+    }
+}    
+
