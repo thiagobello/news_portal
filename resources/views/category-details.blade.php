@@ -3,10 +3,8 @@
 @section('text')
 <div class="news-align">
 
-	<div class="col-md-8 ml-auto mr-auto">
-		<h3 class="title">{{$category->name}}</h3>
-
-	</div>
+	<h1>{{$category-> id}} </h1>
+	<h2>{{$category-> name}} </h2>
 
 </div>
 

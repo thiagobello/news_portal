@@ -21,9 +21,9 @@ class CategoryController extends Controller
 
 	}
 
-	public function Details($id){
-		$category = category::find($id);
-		return view('category-details') ->with('cat', $category);
+	public function Details(Request $request, $id){
+		$category = Category::find($id);
+		return view('category-details') ->with('category', $category);
 
 	}
 

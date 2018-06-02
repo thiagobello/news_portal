@@ -12,4 +12,4 @@ Route::post('/categorias/adiciona', 'CategoryController@new');
 Route::get('/login', 'Auth\LoginController@form');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/mais-acessadas', 'NewsController@MostAcessed');
-Route::get('/categoria/detalhe/{id}', 'CategoryController@Details');
+Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
