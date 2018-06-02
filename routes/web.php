@@ -13,3 +13,7 @@ Route::get('/login', 'Auth\LoginController@form');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/mais-acessadas', 'NewsController@MostAcessed');
 Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
+
+Auth::routes();
+
+/*Route::get('/home', 'HomeController@index')->name('home');
