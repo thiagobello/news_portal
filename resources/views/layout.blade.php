@@ -26,7 +26,7 @@
                 <img src="/assets/img/esamc.png" align="center">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#Login" role="tab" data-toggle="tab">
+                <a class="nav-link" href="/login" role="tab" data-toggle="tab">
                     <i class="material-icons">account_circle</i>
                     Login
                 </a>
@@ -56,6 +56,10 @@
                     </li>
                       <li class="nav-item">
                         <a href="{{action('NewsController@MostAcessed')}}" class="nav-link">Mais Acessadas</a>
+                    </li>
+                     </li>
+                      <li class="nav-item">
+                        <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>
                     </li>
                 </ul>                       
 

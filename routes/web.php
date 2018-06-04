@@ -13,6 +13,12 @@ Route::get('/login', 'Auth\LoginController@form');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/mais-acessadas', 'NewsController@MostAcessed');
 Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
+Route::post('/contato', 'ContactController@Form');
+Route::get('/minha-conta', 'LoginController@MyAccount');
+Route::get('/logout', 'LoginController@Logout');
+Route::get('/noticias/pendentes', 'NewsController@NewsWaiting');
+Route::get('/noticias/pendentes/{id}','NewsController@ViewWaiting')->where('id', '[0-9]+');
+Route::get('/noticias/pendentes/{id}/aprovar','NewsController@ApproveNews')->where('id', '[0-9]+');
 
 Auth::routes();
 
