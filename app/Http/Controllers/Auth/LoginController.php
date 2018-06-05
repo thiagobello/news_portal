@@ -17,7 +17,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/noticias';
+    protected $redirectTo = '/minha-conta';
 
     /**
      * Create a new controller instance.
@@ -28,6 +28,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+  
 
     /**
      * Formulario de Login
@@ -49,7 +51,7 @@ class LoginController extends Controller
         $credentials = Request::only('email','password');
 
         if (Auth::attempt($credentials)) {
-            return 'Sucesso';
+            return view('myaccount');
         }
             return 'Failed';
     }

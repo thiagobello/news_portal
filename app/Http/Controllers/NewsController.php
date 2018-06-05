@@ -50,7 +50,7 @@ class NewsController extends Controller
 
     public function home()
     {
-        $news = News::paginate(2);
+        $news = News::where('status', '1') ->paginate(2);
         return  view('home') -> with('news', $news);
     }
 
@@ -67,8 +67,30 @@ class NewsController extends Controller
     }
 
     public function MostAcessed(){
-        $news = DB::table('news') ->orderBy('views', 'desc') ->get();
+        $news = DB::table('news') ->where('status','1') ->orderBy('views', 'desc') ->paginate(2);
         return view('most-acessed') ->with ('news', $news);
+    }
+
+    public function NewsWaiting(){
+        $news = News::where('status', '0') ->paginate(2);
+        return view('news-waiting') -> with('news', $news);
+    }
+
+        public function ViewWaiting($id)
+    {
+        $vn = News::find($id);
+        return view('view-news-waiting')->with('n',$vn);
+    }
+
+    public function ApproveNews($id){
+
+        $news = News::find($id);
+        if ($news) {
+         $news->status = 1;
+         $news-> save();
+        }
+    return redirect('/noticias/pendentes');
+
     }
 }    
 
