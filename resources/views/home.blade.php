@@ -18,7 +18,7 @@
           <span>{{$n->date}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
-      </div>
+      </div>    
     </a>
     @endforeach
     
