@@ -16,11 +16,11 @@ class NewsRequest extends FormRequest
     {
         return 
         [
-            'users_id' => 'required|numeric',
-            'category_id' => 'required|numeric',
-            'title' => 'required|min:3',
-            'date' => 'required|max:255',
-            'notice' => 'required'
+            //'users_id' => 'required|numeric',
+            //'category_id' => 'required|numeric',
+           // 'title' => 'required|min:3',
+            //'date' => 'required|max:255',
+            //'notice' => 'required'
         ];
     }
 

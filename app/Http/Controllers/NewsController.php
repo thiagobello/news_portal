@@ -1,10 +1,10 @@
 <?php namespace news_portal\Http\Controllers;
 
-use Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Validator;
 use news_portal\News;
 use news_portal\Category;
+use Illuminate\Http\Request;
 use news_portal\Http\Requests\NewsRequest;
 
 
@@ -18,8 +18,18 @@ class NewsController extends Controller
     }
 */
     public function create(NewsRequest $request)
-    {
-		News::create($request->all());
+    {   
+       // return json_encode($request->all());
+
+        $user = $request->input('user');
+        $category = $request->input('category');
+        $title = $request->input('title');
+        $date = $request->input('date');
+        $notice = $request->input('notice');
+
+
+		DB::insert('insert into news (users_id, category_id, title, date, notice)  values(?, ?, ?, ?, ?)',array($user, $category, $title, $date, $notice));
+
 		return view('create-news')->with('category', Category::all());
     }
 
