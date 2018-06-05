@@ -7,7 +7,7 @@ var user = $('#user').val();
 var category = $('#category').val();
 var title = $('#title').val();
 var date = $('#date').val(); // Caso esteja usando biblioteca de data, o método muda
-var notice = $('#notice').summernote('code'); // aqui seria pegando com SUMMERNOTE  
+var notice = $('#notice').val();
 
 
     $.ajax({

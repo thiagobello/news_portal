@@ -30,7 +30,7 @@ class NewsController extends Controller
 
 		DB::insert('insert into news (users_id, category_id, title, date, notice)  values(?, ?, ?, ?, ?)',array($user, $category, $title, $date, $notice));
 
-		return view('create-news')->with('category', Category::all());
+		return redirect('/noticias')->with('category', Category::all());
     }
 
     public function list()

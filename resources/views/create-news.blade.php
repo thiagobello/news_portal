@@ -28,18 +28,11 @@
     <label class="label-control">Data de Publicação</label>
     <input name="date" type="text" class="form-control datetimepicker" id="date" />
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Noticia</label>
-    <textarea name="notice" class="form-control" id="notice"></textarea>
-  </div>
   
-
-     <script>
-      $(document).ready(function() {
-      $('#notice').summernote();
-      });
-    </script>
-
+  
+  <textarea name="notice" id="notice" rows="10" cols="80"></textarea>
+  
+  <script>CKEDITOR.replace( 'notice' );</script>
   <button type="submit" class="btn btn-info">Publicar</button>
   
 </form>

@@ -11,10 +11,6 @@
 
     <link rel="stylesheet" href="/assets/css/design-portal.css">
     
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
@@ -23,14 +19,7 @@
     <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
     <script src="assets/js/material-kit.js?v=2.0.3"></script>
 
-
-
-    <!-- include summernote css/js -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-
-
-    
+    <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
 
     <title>Portal de Noticias ESAMC</title> 
   </head>
