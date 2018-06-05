@@ -48,7 +48,7 @@ class NewsController extends Controller
     public function SearchNews(){
        $txt = Request::input('txt');
        $news = DB::table('news')->where('notice', 'like', '%' . $txt . '%')
-        ->orWhere('title', 'like', '%' . $txt . '%') ->get();
+        ->orWhere('title', 'like', '%' . $txt . '%') ->where('status', '1') ->get();
         $error = "Nenhuma notícia foi encontrada!";
         if (empty($news)) {
             return view('search-news') -> with ('news', $error);
