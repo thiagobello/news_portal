@@ -21,5 +21,22 @@ var notice = $('#notice').val();
             date: date,
             notice: notice
         }
+        }).done(function(obj){ 
+            let id = obj.id;
+
+            let formData = new FormData();
+            formData.append("image",$('#image')[0].files[0]);
+            
+        $.ajax({
+            url: '/save-image/' + id, // AQUI SÓ ALTERAR A ROTA ANTES DO '?'
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: formData 
+        })
     });
 });
+    
+
+

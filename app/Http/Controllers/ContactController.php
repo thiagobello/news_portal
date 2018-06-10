@@ -17,19 +17,11 @@ class ContactController extends Controller
     	$email = Request::input('email');
     	$subject = Request::input('subject');
     	$text = Request::input('text');
-    	//$date = DB::select('select sysdate()');
 
     	DB::table('contact')->insert(
     ['name' => $name, 'email' => $email, 'subject' => $subject, 'text' => $text]
 	);
-    	
-
-
-
-
-    	//DB::insert('insert into contact values(null, ?, ?, null, ?, ?);')
-    	//	-> array($name, $email, $subject, $text);
-
-    	return redirect('/home');	
+    	$resultado = 'Seu contato foi enviado com sucesso!';
+    	return ('/contato')->with( 'resultado', $resultado);
     }
 }

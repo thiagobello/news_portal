@@ -4,6 +4,12 @@
 
 <form action="/contato/enviar" method="post">
 
+ <?php 
+    if ($resultado) {
+      echo $resultado;
+    }
+  ?>
+
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Nome </label>

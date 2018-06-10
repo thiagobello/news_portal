@@ -7,6 +7,8 @@ use news_portal\Category;
 use Request;
 use news_portal\Http\Requests\NewsRequest;
 use Auth;
+use Storage;
+use File;
 
 
 
@@ -18,11 +20,12 @@ class NewsController extends Controller
         $this->middleware('Authorizer');        
     }
 */
+
     public function create(NewsRequest $request)
     {   
+
        // return json_encode($request->all());
    
-       
         $user = $request->input('user');
         $category = $request->input('category');
         $title = $request->input('title');
@@ -30,9 +33,42 @@ class NewsController extends Controller
         $notice = $request->input('notice');
 
 
-		DB::insert('insert into news (users_id, category_id, title, date, notice)  values(?, ?, ?, ?, ?)',array($user, $category, $title, $date, $notice));
+		$done = DB::table('news')->insertGetId(array('users_id'=>$user, 'category_id'=>$category, 'title'=>$title, 'date'=>$date, 'notice'=>$notice));
 
-		return redirect('/noticias')->with('category', Category::all());
+		return $this->returnId($done);
+    }
+
+    public function returnId($id)
+    {
+        return response()->json(
+            array(
+                'id' => $id
+            )
+        );
+    }
+
+    public function saveImage(Request $request)
+    {
+
+        $image = $request->file('image'); 
+        $nameFile = null;
+ 
+            // Verifica se o arquivo retornado pelo AJAX é valido
+            if ($request->hasFile('image') && $request->file('image')->isValid()) {
+                 
+                // Define um aleatório para o arquivo baseado no timestamps atual
+                $name = uniqid(date('HisYmd'));
+         
+                // Recupera a extensão do arquivo
+                $extension = $image->extension();
+         
+                // Defineo nome a ser salvo
+                $nameFile = "{$name}.{$extension}";
+         
+                // Faz o upload:
+                $upload = $request->image->storeAs('public/img', $nameFile);
+                DB::table('news')->where('id',$request->id)->update(array('image'=>$upload));
+            }
     }
 
     public function list()

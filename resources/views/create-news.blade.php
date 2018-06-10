@@ -3,7 +3,10 @@
 @section('text')
 
 
-<form method="POST" id="send_form">
+<form method="POST" id="send_form" enctype="multipart/form-data">
+
+
+ <input type='file' id="image" name="image" accept="image/*"/>
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Quem está publicando?</label>
@@ -33,6 +36,9 @@
   <textarea name="notice" id="notice" rows="10" cols="80"></textarea>
   
   <script>CKEDITOR.replace( 'notice' );</script>
+
+
+
   <button type="submit" class="btn btn-info">Publicar</button>
   
 </form>
