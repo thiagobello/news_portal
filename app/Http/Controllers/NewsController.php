@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use news_portal\News;
 use news_portal\Category;
-use Illuminate\Http\Request;
+use Request;
 use news_portal\Http\Requests\NewsRequest;
+use Auth;
 
 
 
@@ -20,7 +21,8 @@ class NewsController extends Controller
     public function create(NewsRequest $request)
     {   
        // return json_encode($request->all());
-
+   
+       
         $user = $request->input('user');
         $category = $request->input('category');
         $title = $request->input('title');
@@ -35,6 +37,10 @@ class NewsController extends Controller
 
     public function list()
     {
+         if (Auth::Guest()) {
+
+            return redirect('/login');
+        }
     	return view('create-news')->with('category', Category::all());
     }
 

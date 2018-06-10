@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Request;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -12,6 +13,10 @@ class CategoryController extends Controller
 
 	public function list()
 	{
+		if (Auth::Guest()) 
+		{
+			return redirect('/login');
+		}
 		$category = DB::select('select * from category');
 		return view('category') -> with('category', $category);
 	}

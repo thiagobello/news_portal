@@ -51,8 +51,8 @@ class LoginController extends Controller
         $credentials = Request::only('email','password');
 
         if (Auth::attempt($credentials)) {
-            return view('myaccount');
+            return redirect('minha-conta');
         }
-            return 'Failed';
+            return redirect('/login');
     }
 }
