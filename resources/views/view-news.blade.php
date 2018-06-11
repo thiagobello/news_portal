@@ -7,7 +7,7 @@
 		<h3 class="title">{{$n->title}}</h3>
       <img src="/image/{{$n->id}}" alt="">
 		<p>
-			{{$n->notice}}
+			{!!$n->notice!!}
 		</p>
 
 
