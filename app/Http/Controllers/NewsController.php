@@ -9,7 +9,8 @@ use news_portal\Http\Requests\NewsRequest;
 use Auth;
 use Storage;
 use File;
-
+use Image;
+use Response;
 
 
 class NewsController extends Controller
@@ -69,6 +70,19 @@ class NewsController extends Controller
                 $upload = $request->image->storeAs('public/img', $nameFile);
                 DB::table('news')->where('id',$request->id)->update(array('image'=>$upload));
             }
+    }
+
+    public function getImage($id)
+    {
+        $url = DB::table('news')->where('id', $id)->value('image');
+        $arquivo = Storage::get($url);
+
+        $image = Image::make($arquivo);
+        $response = Response::make($image->encode('jpeg'));
+        
+        $response->header('Content-Type', 'image/jpeg');
+ 
+        return $response;
     }
 
     public function list()
