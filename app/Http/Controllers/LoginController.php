@@ -9,11 +9,11 @@ use Auth;
 
 class LoginController extends Controller
 {
-      public function MyAccount(){
+    public function MyAccount(){
  		if (Auth::Guest()) {
  			return redirect ('home');
  		}
-        return view('myaccount');
+        return redirect('/home');
     }
 
     public function Logout(){

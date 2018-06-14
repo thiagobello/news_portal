@@ -35,12 +35,48 @@
             <li class="nav-item">
                 <img src="/assets/img/esamc.png" align="center">
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login" role="tab" data-toggle="tab">
+           
+                <!-- Verificando se o usuário está logado,
+                    caso esteja irá verificar o nível de acesso para definir o menu -->
+            <?php if (Auth::Guest()): ?>
+                  <li class="nav-item">
+                <a class="nav-link" href="/login">
                     <i class="material-icons">account_circle</i>
                     Login
                 </a>
-            </li>            
+            </li>
+            <?php endif ?>
+            <?php if (Auth::Check()):
+                $id = Auth()->user()->id_acess_level;?>
+                <?php if ($id == 1): ?>
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Seja bem-vindo, <?php $name = auth()->user()->name ?> {{$name}} !
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="/categorias">Categorias</a></li>
+                            <li><a href="/noticias">Criar Notícia</a></li>
+                            <li><a href="/register">Criar Usuário</a></li>
+                            <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
+                            <li><a href="/logout">Sair</a></li> 
+                        </ul
+                    </div>
+                <?php endif ?>
+                <?php if ($id == 2): ?>
+                        <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Seja bem-vindo, <?php $name = auth()->user()->name ?> {{$name}} !
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="/noticias">Criar Notícia</a></li>
+                            <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
+                            <li><a href="/logout">Sair</a></li> 
+                        </ul
+                <?php endif ?>
+            <?php endif ?>
+                  
         </ul>
 
     </div>
@@ -76,9 +112,8 @@
                       <li class="nav-item">
                         <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>
                     </li>
-
                 </ul>                       
-
+                </ul>                      
 
                 <div class="collapse navbar-collapse">
                     <form action="/noticias/buscar/{txt}" class="form-inline ml-auto">

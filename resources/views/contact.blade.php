@@ -5,7 +5,7 @@
 <form action="/contato/enviar" method="post">
 
  <?php 
-    if ($resultado) {
+    if (!empty($resultado)) {
       echo $resultado;
     }
   ?>

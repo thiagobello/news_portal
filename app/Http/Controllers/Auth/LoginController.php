@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Auth;
 use Request;
+use DB;
+use Validator;
 
 class LoginController extends Controller
 {
@@ -55,4 +57,6 @@ class LoginController extends Controller
         }
             return redirect('/login');
     }
+
+    
 }

@@ -35,7 +35,8 @@
 			{{$n->notice}}
 		</p>
 
-    <a href='/noticias/pendentes/{{$n->id}}/aprovar'> Aprovar </a>
+    <a href='/noticias/pendentes/{{$n->id}}/aprovar'> Aprovar </a> <br>
+    <a href='/noticias/pendentes/{{$n->id}}/reprovar'> Reprovar </a>
 
 	</div>
 
