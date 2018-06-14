@@ -6,7 +6,7 @@
     <a class="article" href="/noticias/pendentes/{{$n->id}}">
       <div class="article-body">
         <h2 class="article-title">{{$n->title}}</h2>
-        <p class="article-content">{{$n->notice}}</p>
+        <p class="article-content">{!!$n->notice!!}</p>
         <footer class="article-info">
           <span>{{$n->date}}</span>
           <span>{{$n->views}} Visitas</span>
@@ -15,6 +15,7 @@
 
     </a>
   @endforeach
+
   @if($news->hasMorePages())
         <li><a href="{{ $news->nextPageUrl() }}" rel="next">&raquo;</a></li>
     @else

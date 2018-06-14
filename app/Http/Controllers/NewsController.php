@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use news_portal\News;
 use news_portal\Category;
-use Request;
+use Illuminate\Http\Request;
 use news_portal\Http\Requests\NewsRequest;
 use Auth;
 use Storage;
 use File;
-
+use Image;
+use Response;
 
 
 class NewsController extends Controller
@@ -20,7 +21,7 @@ class NewsController extends Controller
         $this->middleware('Authorizer');        
     }
 */
-
+//Criar a noticia e retornar o ID
     public function create(NewsRequest $request)
     {   
 
@@ -37,7 +38,7 @@ class NewsController extends Controller
 
 		return $this->returnId($done);
     }
-
+//Pegar o ID e devolver pro AJAX
     public function returnId($id)
     {
         return response()->json(
@@ -46,7 +47,7 @@ class NewsController extends Controller
             )
         );
     }
-
+//Pegar a imagem do form e salvar o caminho na noticia correspondente do BD
     public function saveImage(Request $request)
     {
 
@@ -69,6 +70,19 @@ class NewsController extends Controller
                 $upload = $request->image->storeAs('public/img', $nameFile);
                 DB::table('news')->where('id',$request->id)->update(array('image'=>$upload));
             }
+    }
+//Receber o ID da rota, pesquisar o caminho do BD e exibir a imagem
+    public function getImage($id)
+    {
+        $url = DB::table('news')->where('id', $id)->value('image');
+        $arquivo = Storage::get($url);
+
+        $image = Image::make($arquivo);
+        $response = Response::make($image->encode('jpeg'));
+
+        $response->header('Content-Type', 'image/jpeg');
+ 
+        return $response;
     }
 
     public function list()
