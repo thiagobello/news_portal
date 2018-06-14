@@ -85,6 +85,30 @@ class NewsController extends Controller
         return $response;
     }
 
+    public function editNews($id)
+    {
+        $news = News::find($id);
+        $category = DB::select('select * from category');
+        $selected = $news->category_id;
+        //dd($selected);
+        //return view('edit-news')->with('news', $news);
+        return view('edit-news', array('news' => $news,'category' => $category,'selected' => $selected));
+    }
+
+    public function saveEditNews(NewsRequest $request)
+    {
+        //dd($request->id);
+        $id = $request->input('id');
+        $category = $request->input('category');
+        $title = $request->input('title');
+        $date = $request->input('date');
+        $notice = $request->input('notice');
+
+        DB::table('news')->where('id',$request->id)->update(array('category_id'=>$category, 'title'=>$title, 'date'=>$date, 'notice'=>$notice));
+
+       return $this->returnId($id);
+    }
+
     public function list()
     {
          if (Auth::Guest()) {
@@ -107,7 +131,9 @@ class NewsController extends Controller
     public function home()
     {
         $news = News::where('status', '1') ->paginate(2);
-        return  view('home') -> with('news', $news);
+        $category = DB::select('select * from category');
+        return  view('home', array('news' => $news,'category' => $category));
+
     }
 
 

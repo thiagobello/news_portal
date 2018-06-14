@@ -5,24 +5,26 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <link rel="stylesheet" href="/assets/css/material-kit.css?v=2.0.3">
+    <link rel="stylesheet" href="{{ asset('assets/css/material-kit.css?v=2.0.3') }}">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-    <link rel="stylesheet" href="/assets/css/design-portal.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/design-portal.css') }}">
     
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
+    <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
 
-    <script src="assets/js/plugins/moment.min.js"></script>
-    <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-    <script src="assets/js/material-kit.js?v=2.0.3"></script>
+    <script src="{{ asset('assets/js/plugins/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/material-kit.js?v=2.0.3') }}"></script>
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/editNews.js') }}"></script>
 
 
     <title>Portal de Noticias ESAMC</title> 
@@ -70,6 +72,16 @@
                       <li class="nav-item">
                         <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>
                     </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
+                            <div class="dropdown-menu">
+                            @foreach($category as $c)
+                              <a class="dropdown-item" href="">{{ $c->name }}</a>
+                            @endforeach
+                            </div>
+                    </li>
+
                 </ul>                       
 
 

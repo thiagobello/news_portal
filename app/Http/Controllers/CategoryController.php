@@ -37,4 +37,9 @@ class CategoryController extends Controller
 
 	}
 
+    public function view($id)
+    {
+    	$category = Category::find($id);
+    	return view('home')->with('c',$category);
+    }
 }	
