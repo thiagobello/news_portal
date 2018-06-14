@@ -20,7 +20,7 @@ Route::get('/logout', 'LoginController@Logout');
 Route::get('/noticias/pendentes', 'NewsController@NewsWaiting');
 Route::get('/noticias/pendentes/{id}','NewsController@ViewWaiting')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/aprovar','NewsController@ApproveNews')->where('id', '[0-9]+');
-
+Route::get('/noticias/pendentes/{id}/reprovar','NewsController@ReproveNews')->where('id', '[0-9]+');
 
 Route::post('/save-image/{id}', 'NewsController@saveImage');
 Route::get('/image/{id}', 'NewsController@getImage')->where('id', '[0-9]+');

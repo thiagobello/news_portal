@@ -128,7 +128,7 @@ class NewsController extends Controller
     }
 
     public function NewsWaiting(){
-        $news = News::where('status', '0') ->paginate(2);
+        $news = News::where('status', 'P') ->paginate(2);
         return view('news-waiting') -> with('news', $news);
     }
 
@@ -139,13 +139,32 @@ class NewsController extends Controller
     }
 
     public function ApproveNews($id){
-
-        $news = News::find($id);
+        if (!Auth::Guest()) {
+            $news = News::find($id);
+            $id = Auth()->user()->id;
         if ($news) {
-         $news->status = 1;
+         $news->status = "A";
+         $news->approved_by = $id;
          $news-> save();
         }
-    return redirect('/noticias/pendentes');
+    return redirect('/noticias/pendentes');  
+        }
+      return redirect('/home');
+
+    }
+
+    public function ReproveNews($id){
+        if (!Auth::Guest()) {
+            $news = News::find($id);
+            $id = Auth()->user()->id;
+        if ($news) {
+         $news->status = "R";
+         $news->reproved_by = $id;
+         $news-> save();
+        }
+    return redirect('/noticias/pendentes');  
+        }
+      return redirect('/home');
 
     }
 }    
