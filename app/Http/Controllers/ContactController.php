@@ -22,6 +22,6 @@ class ContactController extends Controller
     ['name' => $name, 'email' => $email, 'subject' => $subject, 'text' => $text]
 	);
     	$resultado = 'Seu contato foi enviado com sucesso!';
-    	return ('/contato')->with( 'resultado', $resultado);
+    	return view('contact')->with( 'resultado', $resultado);
     }
 }

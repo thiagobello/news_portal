@@ -34,12 +34,59 @@
             <li class="nav-item">
                 <img src="/assets/img/esamc.png" align="center">
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login" role="tab" data-toggle="tab">
+            <?php if (Auth::Guest()): ?>
+                  <li class="nav-item">
+                <a class="nav-link" href="/login">
                     <i class="material-icons">account_circle</i>
                     Login
                 </a>
-            </li>            
+            </li>   
+            <?php endif ?>
+            <?php if (Auth::check()): ?>
+                <?php $id = auth()->user()->id; ?>
+                
+                <!--<li class="nav-item">
+                    <a class="nav-link">
+                     <i class="material-icons">account_circle</i> -->
+                <?php if ($id = 1): ?>
+                            
+                                
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Seja bem-vindo, <?php $name = auth()->user()->name ?> {{$name}} !
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="/categorias">Categorias</a></li>
+                            <li><a href="/noticias">Criar Notícia</a></li>
+                            <li><a href="/register">Criar Usuário</a></li>
+                            <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
+                            <li><a href="/logout">Sair</a></li> 
+                        </ul>
+                    </div> 
+                <?php endif ?>
+
+                 <?php if ($id = 2): ?>
+                            
+                                
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Seja bem-vindo, <?php $name = auth()->user()->name ?> {{$name}} !
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="/noticias">Criar Notícia</a></li>
+                            <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
+                            <li><a href="/logout">Sair</a></li> 
+                        </ul>
+                    </div> 
+                  <?php endif ?>    
+                 <!--   </a>
+                </li> -->  
+                                  
+            <?php endif ?>
+
+
         </ul>
 
     </div>
@@ -57,12 +104,7 @@
                 </div>
              <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="{{action('CategoryController@list')}}" class="nav-link">Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
-                    </li>
+                
                       <li class="nav-item">
                         <a href="{{action('NewsController@MostAcessed')}}" class="nav-link">Mais Acessadas</a>
                     </li>
@@ -70,8 +112,7 @@
                       <li class="nav-item">
                         <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>
                     </li>
-                </ul>                       
-
+                </ul>                      
 
                 <div class="collapse navbar-collapse">
                     <form action="/noticias/buscar/{txt}" class="form-inline ml-auto">
