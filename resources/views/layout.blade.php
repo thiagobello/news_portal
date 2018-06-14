@@ -24,7 +24,6 @@
     <script src="{{ asset('assets/js/material-kit.js?v=2.0.3') }}"></script>
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/editNews.js') }}"></script>
 
 
     <title>Portal de Noticias ESAMC</title> 
@@ -59,8 +58,13 @@
                 </div>
              <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="{{action('CategoryController@list')}}" class="nav-link">Categorias</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                            <div class="dropdown-menu">
+                            @foreach($category as $c)
+                              <a class="dropdown-item" href="/noticias-categoria/{{$c->id}}">{{ $c->name }}</a>
+                            @endforeach
+                            </div>
                     </li>
                     <li class="nav-item">
                         <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
@@ -71,15 +75,6 @@
                      </li>
                       <li class="nav-item">
                         <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
-                            <div class="dropdown-menu">
-                            @foreach($category as $c)
-                              <a class="dropdown-item" href="">{{ $c->name }}</a>
-                            @endforeach
-                            </div>
                     </li>
 
                 </ul>                       

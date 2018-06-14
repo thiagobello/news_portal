@@ -24,6 +24,7 @@ Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
 Route::get('/categoria/{id}','CategoryController@view')->where('id', '[0-9]+');
 Route::get('/categoria', 'CategoryController@list');
 Route::get('/categorias', 'CategoryController@list');
+Route::get('/noticias-categoria/{id}', 'CategoryController@newsByCategory');
 
 //Rotas de Login
 Route::get('/login', 'Auth\LoginController@form');
