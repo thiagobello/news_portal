@@ -39,7 +39,9 @@ Route::post('/contato/enviar', 'ContactController@SendContact');
 
 //Rotas de Parceiros
 Route::get('/parceiros', 'PartnersController@partners');
-
+Route::post('/parceiros-salvar', 'PartnersController@partnersCreate');
+Route::post('/partner-image/{id}', 'PartnersController@saveImage')->where('id', '[0-9]+');
+Route::get('/partner/{id}', 'PartnersController@getImageP')->where('id', '[0-9]+');
 
 
 
