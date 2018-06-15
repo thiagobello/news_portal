@@ -19,7 +19,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/minha-conta';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -53,7 +53,7 @@ class LoginController extends Controller
         $credentials = Request::only('email','password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('minha-conta');
+            return redirect('home');
         }
             return redirect('/login');
     }

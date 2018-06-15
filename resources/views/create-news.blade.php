@@ -2,7 +2,14 @@
 
 @section('text')
 
-
+<!-- Pegar o usuário logado para passar para o input
+  Pegar a data atual para passar para o input !-->
+<?php 
+  $name = auth()->user()->name;
+  $id = auth()->user()->id;
+  date_default_timezone_set('America/Sao_Paulo');
+  $data = date('d/m/y');
+?>
 <form method="POST" id="send_form" enctype="multipart/form-data">
 
 
@@ -10,8 +17,7 @@
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Quem está publicando?</label>
-     <input  name="user" class="form-control" id="user">
-     <span class="bmd-help">Digite o nome de quem está publicando.</span>
+     <input  name="user" class="form-control" id="user" readonly="true" type="text" value="<?php echo $name ?>">
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Categoria</label>
@@ -29,7 +35,7 @@
   </div>
   <div class="form-group">
     <label class="label-control">Data de Publicação</label>
-    <input name="date" type="text" class="form-control datetimepicker" id="date" />
+    <input name="date" type="text" class="form-control datetimepicker" id="date" value="<?php echo $data?>" readonly="true"/> 
   </div>
   
   
