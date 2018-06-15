@@ -7,6 +7,7 @@ use news_portal\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -36,8 +37,16 @@ class RegisterController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        $this->middleware('guest');
+    {   if (!Auth::Guest()) {
+       $id = Auth()->user()->id_acess_level;
+        if ($id==1) {
+            return redirect('/register');
+        }
+    }
+        return redirect('/login');
+  
+     
+     //   $this->middleware('guest');
     }
 
     /**

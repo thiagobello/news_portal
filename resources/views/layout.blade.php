@@ -74,6 +74,7 @@
                             <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
+                    </div>
                 <?php endif ?>
             <?php endif ?>
                   
@@ -95,15 +96,14 @@
              <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
+                        <?php 
+                            $category = DB::select('select * from category'); ?>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
                             <div class="dropdown-menu">
                             @foreach($category as $c)
                               <a class="dropdown-item" href="/noticias-categoria/{{$c->id}}">{{ $c->name }}</a>
                             @endforeach
                             </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{action('NewsController@list')}}" class="nav-link">Criar Noticia</a>
                     </li>
                       <li class="nav-item">
                         <a href="{{action('NewsController@MostAcessed')}}" class="nav-link">Mais Acessadas</a>
