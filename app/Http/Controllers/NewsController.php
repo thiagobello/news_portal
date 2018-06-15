@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use news_portal\News;
 use news_portal\Category;
+use news_portal\Partners;
 use Illuminate\Http\Request;
 use news_portal\Http\Requests\NewsRequest;
 use Auth;
@@ -132,8 +133,9 @@ class NewsController extends Controller
     {
         $news = News::where('status', '1') ->paginate(2);
         $category = DB::select('select * from category');
-        return  view('home', array('news' => $news,'category' => $category));
-
+        $partner = DB::select('select * from partners');
+            
+        return view('home', array('news' => $news,'category' => $category,'partner' => $partner));
     }
 
 

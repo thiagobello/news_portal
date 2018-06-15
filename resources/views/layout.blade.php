@@ -25,6 +25,12 @@
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
 
+    
+    <script>
+        document.querySelector('.carousel-inner > div:first-child').classList.add('active');
+    </script>
+
+
 
     <title>Portal de Noticias ESAMC</title> 
   </head>
