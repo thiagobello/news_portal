@@ -37,7 +37,6 @@
             <li class="nav-item">
                 <img src="/assets/img/esamc.png" align="center">
             </li>
-           
                 <!-- Verificando se o usuário está logado,
                     caso esteja irá verificar o nível de acesso para definir o menu -->
             <?php if (Auth::Guest()): ?>
@@ -137,18 +136,26 @@
 
     <footer class="footer footer-black">
         <div class="container">
-            <a class="footer-brand" href="#home"> Portal</a>
+            <a class="footer-brand" href="https://esamc.br/">ESAMC</a>
             <ul class="pull-center">
                 <li>
-                    <a href="#home" >Test</a>
+                   <a>Copyright © 2018 | Alexandre Rubbinato e Thiago Bello</a> 
                 </li>
             </ul>
             <ul class="social-butons pull-right">
                 <li>
-                    <a href="" class="btn btn-just-icon btn-simple">
-                        <i class="fa fa-twitter">
-                            
-                        </i>
+                    <a target="_blank" href="https://www.facebook.com/esamcsorocabaoficial/" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/esamcsorocaba/" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCGo0awgsBhOW1LO7FDfAs_w" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-youtube"></i>
                     </a>
                 </li>
             </ul>
