@@ -5973,10 +5973,10 @@ button.close {
     position: relative;
     display: none;
     align-items: center;
-    width: 100%;
     transition: transform 0.6s ease;
     backface-visibility: hidden;
     perspective: 1000px;
+    width: 100%;
 }
 
 .carousel-item.active,
@@ -6195,14 +6195,14 @@ button.bg-success:focus {
 }
 
 .bg-info {
-    background-color: #00bcd4 !important;
+    background-color: #1B2442 !important;
 }
 
 a.bg-info:hover,
 a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
-    background-color: #008fa1 !important;
+    background-color: #1B2442 !important;
 }
 
 .bg-warning {
@@ -14329,14 +14329,14 @@ textarea {
 
 .navbar.bg-info {
     color: #fff;
-    background-color: #00bcd4 !important;
+    background-color: #1B2442 !important;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(0, 188, 212, 0.46);
 }
 
 .navbar.bg-info .dropdown-item:hover,
 .navbar.bg-info .dropdown-item:focus {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
-    background-color: #00bcd4;
+    background-color: #1B2442;
     color: #fff;
 }
 
@@ -16394,18 +16394,18 @@ footer {
 }
 
 .footer-black {
-    background: #232323;
-    background: -moz-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    background: #1B2442;
+    background: -moz-radial-gradient(center, ellipse cover, #585858 0%, #1B2442 100%);
     /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #585858), color-stop(100%, #232323));
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #585858), color-stop(100%, #1B2442));
     /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #585858 0%, #1B2442 100%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    background: -o-radial-gradient(center, ellipse cover, #585858 0%, #1B2442 100%);
     /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #585858 0%, #232323 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #585858 0%, #1B2442 100%);
     /* IE10+ */
-    background: radial-gradient(ellipse at center, #585858 0%, #232323 100%);
+    background: radial-gradient(ellipse at center, #585858 0%, #1B2442 100%);
     /* W3C */
     background-size: 550% 450%;
     color: white;

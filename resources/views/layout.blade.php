@@ -25,14 +25,10 @@
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
 
-    
-    <script>
-        document.querySelector('.carousel-inner > div:first-child').classList.add('active');
-    </script>
 
 
 
-    <title>Portal de Noticias ESAMC</title> 
+    <title>E-News</title> 
   </head>
   <body>
 
@@ -41,7 +37,6 @@
             <li class="nav-item">
                 <img src="/assets/img/esamc.png" align="center">
             </li>
-           
                 <!-- Verificando se o usuário está logado,
                     caso esteja irá verificar o nível de acesso para definir o menu -->
             <?php if (Auth::Guest()): ?>
@@ -62,7 +57,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="/categorias">Categorias</a></li>
-                            <li><a href="/minhas-noticias">Noticias</a></li>
+                            <li><a href="/noticias">Criar Notícia</a></li>
                             <li><a href="/register">Criar Usuário</a></li>
                             <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
                             <li><a href="/logout">Sair</a></li> 
@@ -89,7 +84,7 @@
     </div>
 
     <div>
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-lg bg-info">
             <div class="container">
                 <div class="navbar-translate">
                     <a class="navbar-brand" href="{{action('NewsController@home')}}">Home</a>
@@ -139,20 +134,28 @@
     @yield('text')
 </div>
 
-    <footer class="footer footer-black">
+    <footer class="footer footer-info">
         <div class="container">
-            <a class="footer-brand" href="#home"> Portal</a>
+            <a class="footer-brand" href="https://esamc.br/">ESAMC</a>
             <ul class="pull-center">
                 <li>
-                    <a href="#home" >Test</a>
+                   <a>Copyright © 2018 | Alexandre Rubbinato e Thiago Bello</a> 
                 </li>
             </ul>
             <ul class="social-butons pull-right">
                 <li>
-                    <a href="" class="btn btn-just-icon btn-simple">
-                        <i class="fa fa-twitter">
-                            
-                        </i>
+                    <a target="_blank" href="https://www.facebook.com/esamcsorocabaoficial/" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/esamcsorocaba/" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCGo0awgsBhOW1LO7FDfAs_w" class="btn btn-just-icon btn-simple">
+                        <i class="fa fa-youtube"></i>
                     </a>
                 </li>
             </ul>

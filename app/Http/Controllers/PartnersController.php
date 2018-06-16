@@ -42,7 +42,7 @@ class PartnersController extends Controller
 
         $image = $request->file('image'); 
         $nameFile = null;
- 
+
             // Verifica se o arquivo retornado pelo AJAX é valido
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
                  
