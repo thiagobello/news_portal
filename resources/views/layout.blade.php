@@ -28,7 +28,7 @@
 
 
 
-    <title>Portal de Noticias ESAMC</title> 
+    <title>E-News</title> 
   </head>
   <body>
 
@@ -84,7 +84,7 @@
     </div>
 
     <div>
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-lg bg-info">
             <div class="container">
                 <div class="navbar-translate">
                     <a class="navbar-brand" href="{{action('NewsController@home')}}">Home</a>
@@ -134,7 +134,7 @@
     @yield('text')
 </div>
 
-    <footer class="footer footer-black">
+    <footer class="footer footer-info">
         <div class="container">
             <a class="footer-brand" href="https://esamc.br/">ESAMC</a>
             <ul class="pull-center">

@@ -21,9 +21,7 @@
       </div>    
     </a>
     @endforeach
-    
 
-    
     @if($news->hasMorePages())
         <li><a href="{{ $news->nextPageUrl() }}" rel="next">&raquo;</a></li>
     @else

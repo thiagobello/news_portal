@@ -13,17 +13,11 @@
      <input  name="link" id="link" class="form-control">
   </div>
 
-
-
      <input type='file' id="image" name="image" accept="image/*"/>
-
-
 
 <div>
     <button type="submit" class="btn btn-info">Adicionar</button>
 </div>
-
-
 </form>
 
 
