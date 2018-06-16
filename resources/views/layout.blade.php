@@ -25,10 +25,6 @@
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
 
-    
-    <script>
-        document.querySelector('.carousel-inner > div:first-child').classList.add('active');
-    </script>
 
 
 
@@ -62,7 +58,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="/categorias">Categorias</a></li>
-                            <li><a href="/minhas-noticias">Noticias</a></li>
+                            <li><a href="/noticias">Criar Notícia</a></li>
                             <li><a href="/register">Criar Usuário</a></li>
                             <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
                             <li><a href="/logout">Sair</a></li> 
