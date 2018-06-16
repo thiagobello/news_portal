@@ -6,7 +6,6 @@ use news_portal\News;
 use news_portal\Category;
 use Request;
 use news_portal\Partners;
-use Illuminate\Http\Request;3
 use news_portal\Http\Requests\NewsRequest;
 use Auth;
 use Storage;
