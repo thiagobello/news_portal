@@ -77,7 +77,8 @@ class NewsController extends Controller
         $url = DB::table('news')->where('id', $id)->value('image');
         $arquivo = Storage::get($url);
 
-        $image = Image::make($arquivo);
+        $image = Image::make($arquivo)->fit(640,480);
+
         $response = Response::make($image->encode('jpeg'));
 
         $response->header('Content-Type', 'image/jpeg');
