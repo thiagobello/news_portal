@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-info">Entrar</button>
-                        <a href="/home" align="right"> Esqueci minha senha</a>
+                        <a href="/recuperar-senha" align="right"> Esqueci minha senha</a>
                     </form> 
                    
                 </div>
@@ -100,7 +100,7 @@
                             <li><a href="/noticias/">Criar Notícia</a></li>
                             <li><a href="/categorias">Categorias</a></li>
                             <li><a href="/minhas-noticias">Minhas Notícias</a></li>
-                            <li><a href="/register">Criar Usuário</a></li>
+                            <li><a href="/criar-usuario">Criar Usuário</a></li>
                             <li><a href="/minha-conta"> Editar Perfil </a></li>
                             <li><a href="">Mensagens</a></li>
                             <li><a href="/logout">Sair</a></li> 

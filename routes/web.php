@@ -5,7 +5,7 @@ Route::get('/home','NewsController@home');
 Route::post('/noticias-criar','NewsController@create');
 Route::get('/noticias/{id}','NewsController@view')->where('id', '[0-9]+');
 Route::get('/noticias','NewsController@list');
-Route::get('/noticias/buscar/{txt}', 'NewsController@SearchNews');
+Route::get('/noticias/buscar/{txt}', 'SearchController@SearchNews');
 Route::get('/noticias/pendentes', 'NewsController@NewsWaiting');
 Route::get('/noticias/pendentes/{id}','NewsController@View')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/aprovar','NewsController@ApproveNews')->where('id', '[0-9]+');
@@ -33,6 +33,9 @@ Route::post('/login/entrar', 'Auth\LoginController@login');
 Route::get('/logout', 'LoginController@Logout');
 Route::get('/minha-conta', 'LoginController@FormEdit');
 Route::post('/minha-conta/alterar','LoginController@Edit');
+Route::get('/criar-usuario', 'LoginController@Form');
+Route::post('/criar-usuario/novo', 'LoginController@NewUser');
+Route::get('/recuperar-senha', 'LoginController@Forgot');
 
 
 //Rotas de Contato

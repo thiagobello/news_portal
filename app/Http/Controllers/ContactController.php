@@ -26,7 +26,7 @@ class ContactController extends Controller
     }
 
     public function ViewContactBox(){
-        $cb = DB::select('select a.description as descr, ifnull(count(*),0) as qtd from contact_box a, contact b where a.id= b.id_contact_box group by a.description');
+        $cb = DB::select('select * from contact_box');
 
         return view('contact-box')->with('cb', $cb);
 

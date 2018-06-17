@@ -13,7 +13,6 @@ use File;
 use Image;
 use Response;
 
-
 class NewsController extends Controller
 
 {
@@ -142,18 +141,6 @@ class NewsController extends Controller
         return view('home', array('news' => $news,'category' => $category,'partner' => $partner));
     }
 
-
-    // Procurar noticias
-    public function SearchNews(){
-       $txt = Request::input('txt');
-       $news = DB::table('news')->where('notice', 'like', '%' . $txt . '%')
-        ->orWhere('title', 'like', '%' . $txt . '%') ->where('status', 'A') ->get();
-        $error = "Nenhuma notícia foi encontrada!";
-        if (empty($news)) {
-            return view('search-news') -> with ('news', $error);
-        }
-       return view('search-news') -> with ('news', $news);
-    }
 
    // Noticias mais acessadas
     public function MostAcessed(){

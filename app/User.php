@@ -5,6 +5,7 @@ namespace news_portal;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\ResetPassword;
 
 class User extends Authenticatable
 {
@@ -27,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new meuResetDeSenha($token));
+    }
 }
