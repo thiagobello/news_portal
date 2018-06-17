@@ -1,7 +1,8 @@
 @extends('layout')
 @section('text')
 
-<!-- Fazer contagens para alimentar as abas-->
+<!-- Fazer contagens para alimentar as abas
+ e pegar dados para alimentar cada aba-->
 <?php 
 	$id = auth()->user()->id;
 	$qtdativos = DB::table('news')->where('users_id', $id)->where('status', 'A')->count();

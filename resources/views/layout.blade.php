@@ -41,10 +41,51 @@
                     caso esteja irá verificar o nível de acesso para definir o menu -->
             <?php if (Auth::Guest()): ?>
                   <li class="nav-item">
-                <a class="nav-link" href="/login">
-                    <i class="material-icons">account_circle</i>
-                    Login
-                </a>
+<button class="btn btn-round" data-toggle="modal" data-target="#loginModal">
+    Login
+
+</button>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="">
+    <div class="modal-dialog modal-login" role="document">
+        <div class="modal-content">
+            <div class="card card-signup card-plain">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <form action="/login/entrar" method="post">
+                        <p class="description text-center"><br><b>Insira os dados de sua conta</b></p>
+                        <div class="card-body">
+                            <div class="form-group bmd-form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">email</i>
+                                    </span>
+                                    <input type="email" name ="email" class="form-control" placeholder="E-Mail">
+                                </div>
+                            </div>
+
+                            <div class="form-group bmd-form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                    <input type="password" name="password" placeholder="Senha" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info">Entrar</button>
+                        <a href="/home" align="right"> Esqueci minha senha</a>
+                    </form> 
+                   
+                </div>
+                <div class="modal-footer justify-content-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             </li>
             <?php endif ?>
             <?php if (Auth::Check()):
@@ -56,10 +97,11 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="/noticias/">Criar Notícia</a></li>
                             <li><a href="/categorias">Categorias</a></li>
-                            <li><a href="/noticias">Criar Notícia</a></li>
+                            <li><a href="/minhas-noticias">Minhas Notícias</a></li>
                             <li><a href="/register">Criar Usuário</a></li>
-                            <li><a href="/noticias/pendentes">Notícias Pendentes</a></li>
+                            <li><a href="/minha-conta"> Editar Perfil </a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
                     </div>

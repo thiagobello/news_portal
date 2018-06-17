@@ -2,7 +2,7 @@
 
 @section('text')
 
-<form action="/login" method="post">
+<form action="/login/entrar" method="post">
 
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
 

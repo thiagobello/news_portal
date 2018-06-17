@@ -29,8 +29,10 @@ Route::get('/noticias-categoria/{id}', 'CategoryController@newsByCategory');
 //Rotas de Login
 Auth::routes();	
 Route::get('/login', 'Auth\LoginController@form');
-Route::post('/login', 'Auth\LoginController@login');
+Route::post('/login/entrar', 'Auth\LoginController@login');
 Route::get('/logout', 'LoginController@Logout');
+Route::get('/minha-conta', 'LoginController@FormEdit');
+Route::post('/minha-conta/alterar','LoginController@Edit');
 
 
 //Rotas de Contato
