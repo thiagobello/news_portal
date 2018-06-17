@@ -1,6 +1,6 @@
 
 $('#send_form').on('submit',function(e){
-    console.log('tentou');
+
 e.preventDefault();
 
 var user = $('#user').val();

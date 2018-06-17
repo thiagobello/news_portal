@@ -10,7 +10,7 @@
   date_default_timezone_set('America/Sao_Paulo');
   $data = date('d/m/y');
 ?>
-<form method="POST" id="send_form" enctype="multipart/form-data">
+<form method="POST" id="send_form" enctype="multipart/form-data" onSubmit="return verify()">
 
 
  <input type='file' id="image" name="image" accept="image/*"/>
@@ -22,6 +22,7 @@
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Categoria</label>
      <select name="category" class="form-control" id="category">
+        <option value="" selected disabled hidden>Selecione uma Categoria</option>
         @foreach($category as $c)
         <option value="{{$c->id}}">{{$c->name}}</option>
         @endforeach
@@ -39,7 +40,7 @@
   </div>
   
   
-  <textarea name="notice" id="notice" rows="10" cols="80"></textarea>
+  <textarea name="notice" id="notice" rows="10" cols="80">Digite a notícia...</textarea>
   
   <script>CKEDITOR.replace( 'notice' );</script>
 
@@ -51,5 +52,5 @@
 
 
 <script type="text/javascript" src="{{ asset('assets/js/example.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('assets/js/verify.js') }}"></script>
 @stop

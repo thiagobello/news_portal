@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('text')
-<form class="form-align" action="/categorias/adiciona" method="post">
+<form id="send_form" class="form-align"  method="post" onSubmit="return verify()" action="/categorias/adiciona">
 
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Digite o nome da nova categoria.</label>
-     <input  name="name" class="form-control">
+     <input  name="category_m" class="form-control">
   </div>
   <button type="submit" class="btn btn-info">Adicionar</button>
 
@@ -20,5 +20,7 @@
 		</tr>
 	@endforeach		
 </table>
+
+<script type="text/javascript" src="{{ asset('assets/js/verify.js') }}"></script>
 
 @stop

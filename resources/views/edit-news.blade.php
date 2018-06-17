@@ -3,7 +3,7 @@
 @section('text')
 
 
-<form method="post" id="send_form" enctype="multipart/form-data">
+<form method="post" id="send_form" enctype="multipart/form-data" onSubmit="return verify()">
 
 <input type="hidden" id="id" name="id" value="{{$news->id}}">
 
@@ -39,7 +39,7 @@
   
 </form>
 
-    <script type="text/javascript" src="{{ asset('assets/js/editNews.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('assets/js/editNews.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/verify.js') }}"></script>
 
 @stop

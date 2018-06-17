@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('text')
-<form class="form-align" method="POST" id="send_form" enctype="multipart/form-data">
+<form class="form-align" method="POST" id="send_form" enctype="multipart/form-data" onSubmit="return verify()">
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Digite o nome do Parceiro</label>
@@ -26,5 +26,6 @@
 </table>
 
 <script type="text/javascript" src="{{ asset('assets/js/partners.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/verify.js') }}"></script>
 
 @stop

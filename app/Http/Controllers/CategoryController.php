@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
 	public function new()
 	{
-		$name = Request::input('name');
+		$name = Request::input('category_m');
 
 		DB::insert('insert into category values(null, ?)', array($name));
 

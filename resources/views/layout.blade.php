@@ -25,7 +25,7 @@
 
     <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
 
-
+    
 
 
     <title>E-News</title> 
