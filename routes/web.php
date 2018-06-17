@@ -38,6 +38,7 @@ Route::post('/minha-conta/alterar','LoginController@Edit');
 //Rotas de Contato
 Route::get('/contato', 'ContactController@Form');
 Route::post('/contato/enviar', 'ContactController@SendContact');
+Route::get('/caixa-mensagens', 'ContactController@ViewContactBox');
 
 //Rotas de Parceiros
 Route::get('/parceiros', 'PartnersController@partners');

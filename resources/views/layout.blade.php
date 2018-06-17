@@ -45,7 +45,7 @@
     Login
 
 </button>
-
+ <!-- Modal formulário de Login -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="">
     <div class="modal-dialog modal-login" role="document">
         <div class="modal-content">
@@ -102,6 +102,7 @@
                             <li><a href="/minhas-noticias">Minhas Notícias</a></li>
                             <li><a href="/register">Criar Usuário</a></li>
                             <li><a href="/minha-conta"> Editar Perfil </a></li>
+                            <li><a href="">Mensagens</a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
                     </div>
