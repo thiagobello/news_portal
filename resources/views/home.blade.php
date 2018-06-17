@@ -2,6 +2,32 @@
 
 @section('text')
 
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+          <div class="carousel-inner-n">
+            <div class="carousel-item active" >
+              <a target="_blank" href="https://esamc.br/">
+              <img src="{{asset('storage/partners/esamc.jpeg')}}"">   
+              </a>
+            </div>
+            <?php 
+               $nc = DB::table('news')->where('status','A')->orderBy('views', 'desc')->take(5)->get();?>
+          @foreach($nc as $n)
+            <div class="carousel-item">
+              <a target="_blank" href="/noticias/{{$n->id}}">
+                  <img src="/image/{{$n->id}}">
+              </a>
+            </div>
+          @endforeach
+          <a class="carousel-control-prev-n" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon-n"></span>
+          </a>
+          <a class="carousel-control-next-n" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon-n"></span>
+          </a>
+        </div>
+    </div>
+
 <main class="main columns">
   <section class="column">
 
@@ -22,24 +48,32 @@
     </a>
     @endforeach
 
-    @if($news->hasMorePages())
-        <li><a href="{{ $news->nextPageUrl() }}" rel="next">&raquo;</a></li>
-    @else
-        <li class="disabled"><span>&raquo;</span></li>
-    @endif
-  </section>
-    
 
+
+  <nav aria-label="..." style="font-color: #1B2442">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="{{ $news->previousPageUrl()}} ">Voltar</a>
+      </li>    
+      <li class="page-item">
+        <a class="page-link" href="{{ $news->nextPageUrl() }}">Próxima</a>
+      </li>
+    </ul>
+  </nav>
+
+</section>
+    
 	<section class="column-right">
 
     <div id="demo" class="carousel slide" data-ride="carousel">
-
           <div class="carousel-inner">
             <div class="carousel-item active" >
               <a target="_blank" href="https://esamc.br/">
               <img src="{{asset('storage/partners/esamc.jpeg')}}"">   
               </a>
             </div>
+            <?php 
+               $partner = DB::select('select * from partners');?>
           @foreach($partner as $p)
             <div class="carousel-item">
               <a target="_blank" href="{{ url($p->link) }}">
@@ -56,12 +90,27 @@
         </div>
     </div>
     <br>
+    <?php $utility = DB::select('select * from utility');?>
+    <table class = "table table-striped table-bordered table-hover">
+      @foreach ($utility as $u)
+        <tr>
+          <td>Utilidade</td>
+          <td>Valor</td>
+          <td>Data de Atualização</td>
+        </tr>
+        <tr>
+          <td> {{$u->name}}</td>
+              <td> {{$u->value}}</td>
+              <td> {{date( 'd/m/Y' , strtotime($u->updated_at))}}</td>
+        </tr>
+      @endforeach     
+    </table>
+    <br>
     <a class="weatherwidget-io" href="https://forecast7.com/pt/n23d50n47d45/sorocaba/" data-label_1="SOROCABA" data-theme="original" >SOROCABA</a>
 		<script>
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 		</script>
 
-    
 	</section>
 
 </main>
