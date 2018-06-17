@@ -43,6 +43,10 @@ Route::post('/parceiros-salvar', 'PartnersController@partnersCreate');
 Route::post('/partner-image/{id}', 'PartnersController@saveImage')->where('id', '[0-9]+');
 Route::get('/partner/{id}', 'PartnersController@getImageP')->where('id', '[0-9]+');
 
+//Utilidades
+Route::get('/utilidades', 'UtilityController@viewUtility');
+Route::post('/utilidades-criar', 'UtilityController@createUtility');
+
 
 
 

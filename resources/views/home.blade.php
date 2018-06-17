@@ -50,10 +50,10 @@
 
 
 
-  <nav aria-label="...">
+  <nav aria-label="..." style="font-color: #1B2442">
     <ul class="pagination justify-content-center">
       <li class="page-item">
-        <a class="page-link" href="{{ $news->previousPageUrl()}}">Voltar</a>
+        <a class="page-link" href="{{ $news->previousPageUrl()}} ">Voltar</a>
       </li>    
       <li class="page-item">
         <a class="page-link" href="{{ $news->nextPageUrl() }}">Próxima</a>
@@ -66,7 +66,6 @@
 	<section class="column-right">
 
     <div id="demo" class="carousel slide" data-ride="carousel">
-
           <div class="carousel-inner">
             <div class="carousel-item active" >
               <a target="_blank" href="https://esamc.br/">
@@ -91,12 +90,27 @@
         </div>
     </div>
     <br>
+    <?php $utility = DB::select('select * from utility');?>
+    <table class = "table table-striped table-bordered table-hover">
+      @foreach ($utility as $u)
+        <tr>
+          <td>Utilidade</td>
+          <td>Valor</td>
+          <td>Data de Atualização</td>
+        </tr>
+        <tr>
+          <td> {{$u->name}}</td>
+              <td> {{$u->value}}</td>
+              <td> {{date( 'd/m/Y' , strtotime($u->updated_at))}}</td>
+        </tr>
+      @endforeach     
+    </table>
+    <br>
     <a class="weatherwidget-io" href="https://forecast7.com/pt/n23d50n47d45/sorocaba/" data-label_1="SOROCABA" data-theme="original" >SOROCABA</a>
 		<script>
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 		</script>
 
-    
 	</section>
 
 </main>
