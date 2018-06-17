@@ -131,18 +131,15 @@ margin-right: 10%;
 /*CARROSEL RESPONSIVO */
 
 .carousel-inner-n {
-    flex: 1;
-    position: relative;
-    width: 100%;
-    height: 500px;
+
+    width: 640px;
+    height: 480px;
     overflow: hidden;
 }
 
 .carousel-inner-n img {
-    flex: 1;
-    position: relative;
-    width: 100%;
-    height: 500px;
+    width: 640px;
+    height: 480px;
     overflow: hidden;
 }
 
