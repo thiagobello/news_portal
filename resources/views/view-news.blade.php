@@ -4,13 +4,10 @@
 <div class="news-align">
 
 	<div class="col-md-8 ml-auto mr-auto">
-		<h3 class="title">{{$n->title}}</h3>
-      <img src="/image/{{$n->id}}" alt="">
-		<p>
-			{!!$n->notice!!}
-		</p>
 
-
+      	<center><img src="/image/{{$n->id}}" alt=""></center>
+      			<h3 class="title" style="text-align: left;">{{$n->title}}</h3>	
+		<p style="text-align: left;">{!!$n->notice!!}</p>
 	</div>
 
 </div>

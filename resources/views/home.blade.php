@@ -2,31 +2,52 @@
 
 @section('text')
 
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div class="slideshow-container">
 
-          <div class="carousel-inner-n">
-            <div class="carousel-item active" >
-              <a target="_blank" href="https://esamc.br/">
-              <img src="{{asset('storage/partners/esamc.jpeg')}}"">   
-              </a>
-            </div>
-            <?php 
-               $nc = DB::table('news')->where('status','A')->orderBy('views', 'desc')->take(5)->get();?>
-          @foreach($nc as $n)
-            <div class="carousel-item">
-              <a target="_blank" href="/noticias/{{$n->id}}">
-                  <img src="/image/{{$n->id}}">
-              </a>
-            </div>
-          @endforeach
-          <a class="carousel-control-prev-n" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon-n"></span>
-          </a>
-          <a class="carousel-control-next-n" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon-n"></span>
-          </a>
-        </div>
-    </div>
+  <?php $nc = DB::table('news')->where('status','A')->orderBy('views', 'desc')->take(5)->get();
+
+  $i =0;
+
+  foreach($nc as $n)
+    {
+      if ($i == 0) 
+      {
+        echo '<div id="slide1" class="mySlides"> 
+                <a target="_blank" href="/noticias/'. $n->id. '"> 
+                  <img src="/image/'.$n->id .'" style="width:100%"> 
+                  <div class="text" style="font-size:200%; text-align: left; font-weight: bold;line-height: 150%; ">' . $n->title .'</div>
+                </a>
+              </div>';
+      }
+      else
+      {
+        echo '<div class="mySlides"> 
+                <a target="_blank" href="/noticias/'. $n->id. '"> 
+                  <img src="/image/'.$n->id .'" style="width:100%"> 
+                  <div class="text" style="font-size:200%; text-align: left; font-weight: bold; line-height: 150%;">' . $n->title .'</div>
+                </a>
+              </div>';
+      }
+
+    $i++;
+
+  }
+
+  ?>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span>  
+</div>
 
 <main class="main columns">
   <section class="column">
@@ -39,7 +60,7 @@
       </figure>
       <div class="article-body">
         <h2 class="article-title">{{$n->title}}</h2>
-        <p class="article-content">{!!$n->notice!!}</p>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
           <span>{{$n->date}}</span>
           <span>{{$n->views}} Visitas</span>
@@ -69,7 +90,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active" >
               <a target="_blank" href="https://esamc.br/">
-              <img src="{{asset('storage/partners/esamc.jpeg')}}"">   
+              <img src="{{asset('storage/partners/esamc.jpeg')}}">   
               </a>
             </div>
             <?php 
@@ -114,9 +135,6 @@
 	</section>
 
 </main>
-
-
-
 
 
 @stop
