@@ -45,7 +45,7 @@ class LoginController extends Controller
         $id = Auth()->user()->id_acess_level;
        if ($id == 1) {
             $access_level = DB::table('access_level')->get();
-            return view('newuser')->with('access_level', $access_level);
+            return view('users')->with('access_level', $access_level);
         }
         return redirect('/login');
 
@@ -53,7 +53,7 @@ class LoginController extends Controller
     }
 
     public function NewUser(){
-        if (!Auth()->user()->id_acess_level == 1) {
+        if (Auth()->user()->id_acess_level != 1) {
             return redirect('/login');
         }
 
@@ -65,8 +65,23 @@ class LoginController extends Controller
         return redirect('/criar-usuario');
     }
 
-    public function Forgot(){
-        return view('auth\passwords\reset');
+    public function EditUser($id){
+        if (Auth()->user()->id_acess_level != 1) {
+            return redirect('/home');
+        }
+
+        $user = db::table('users')->where('id', $id)-> get();
+        return view('edituser')->with('user', $user);
     }
 
+    public function ResetPassword($id){
+         if (Auth()->user()->id_acess_level != 1) {
+            return redirect('/home');
+        }
+
+        $password = bcrypt('123123');
+        DB::table('users')->where('id', $id)->update(['password' => $password]);
+
+        return redirect('/usuarios');
+    }
 }    

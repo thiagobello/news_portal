@@ -23,7 +23,6 @@ Route::post('/categoria/adiciona', 'CategoryController@new');
 Route::post('/categorias/adiciona', 'CategoryController@new');
 Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
 Route::get('/categoria/{id}','CategoryController@view')->where('id', '[0-9]+');
-Route::get('/categoria', 'CategoryController@list');
 Route::get('/categorias', 'CategoryController@list');
 Route::get('/noticias-categoria/{id}', 'CategoryController@newsByCategory')->where('id', '[0-9]+');
 Route::get('/categoria-editar/{id}','CategoryController@editCategory')->where('id', '[0-9]+');
@@ -37,9 +36,11 @@ Route::post('/login/entrar', 'Auth\LoginController@login');
 Route::get('/logout', 'LoginController@Logout');
 Route::get('/minha-conta', 'LoginController@FormEdit');
 Route::post('/minha-conta/alterar','LoginController@Edit');
-Route::get('/criar-usuario', 'LoginController@Form');
+Route::get('/usuarios', 'LoginController@Form');
+Route::get('/usuarios/editar/{id}', 'LoginController@EditUser');
 Route::post('/criar-usuario/novo', 'LoginController@NewUser');
 Route::get('/recuperar-senha', 'LoginController@Forgot');
+Route::post('/usuarios/resetar/{id}', 'LoginController@ResetPassword');
 
 
 //Rotas de Contato

@@ -19,6 +19,9 @@ class CategoryController extends Controller
 		{
 			return redirect('/login');
 		}
+		if (Auth()->user()->id_acess_level != 1) {
+			return redirect('/login');
+		}
 		$category = DB::select('select * from category');
 		return view('category') -> with('category', $category);
 	}
