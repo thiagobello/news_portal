@@ -30,13 +30,13 @@
         <a class="article" href="/noticias/{{$n->id}}">
           <div class="article-body">
             <h2 class="article-title">{{$n->title}}</h2>
-            <p class="article-content">{!!$n->notice!!}</p>
+            <p class="article-content">{!!$n->notice!!}<br></p>
             <footer class="article-info">
+              <span>{{date('d/m/Y', strtotime($n->date))}}</span><br>
               <span>{{$n->views}} Visitas</span>
-            </footer>
-          </div>    
+            </footer>         
         </a>
-        @endforeach     
+      @endforeach     
   </div>
   <div id="menu1">
     @foreach($pendentes as $n)
@@ -45,7 +45,7 @@
           <h2 class="article-title">{{$n->title}}</h2>
           <p class="article-content">{!!$n->notice!!}</p>
           <footer class="article-info">
-            <span>{{$n->date}}</span>
+            <span>{{date('d/m/Y', strtotime($n->date))}}</span>
             <span>{{$n->views}} Visitas</span>
           </footer>
         </div>    
@@ -59,7 +59,7 @@
           <h2 class="article-title">{{$n->title}}</h2>
           <p class="article-content">{!!$n->notice!!}</p>
           <footer class="article-info">
-            <span>{{$n->date}}</span>
+            <span>{{date('d/m/Y', strtotime($n->date))}}</span>
             <span>{{$n->views}} Visitas</span>
           </footer>
         </div>    
@@ -73,7 +73,7 @@
           <h2 class="article-title">{{$n->title}}</h2>
           <p class="article-content">{!!$n->notice!!}</p>
           <footer class="article-info">
-            <span>{{$n->date}}</span>
+            <span>{{date('d/m/Y', strtotime($n->date))}}</span>
             <span>{{$n->views}} Visitas</span>
           </footer>
         </div>    
@@ -87,7 +87,7 @@
           <h2 class="article-title">{{$n->title}}</h2>
           <p class="article-content">{!!$n->notice!!}</p>
           <footer class="article-info">
-            <span>{{$n->date}}</span>
+            <span>{{date('d/m/Y', strtotime($n->date))}}</span>
             <span>{{$n->views}} Visitas</span>
           </footer>
         </div>    

@@ -1,84 +1,77 @@
 @extends('layout')
 @section('text')
 
-<!-- Fazer contagens para alimentar as abas
- e pegar dados para alimentar cada aba-->
 <?php 
 	$id = auth()->user()->id;
 	$qtdnaolida = DB::table('contact')->where('id_contact_box', 1)->count();
 	$qtdlidas = DB::table('contact')->where('id_contact_box', 2)->count();
 	$qtdarquivadas = DB::table('contact')->where('id_contact_box', 3)->count();
-	$qtdlixeira= DB::table('contact')->where('id_contact_box', 4)->count();
 
-	$naolidas = DB::table('contact')->where('id_contact_box', 1) ->get();
-	$lidas = DB::table('contact')->where('id_contact_box', 2) ->get();
-	$arquivadas = DB::table('contact')->where('id_contact_box', 3) ->get();
-	$lixeira = DB::table('contact')->where('id_contact_box', 4) ->get();
+	$naolidas = DB::table('contact')->where('id_contact_box', 1)->orderby('date', 'asc') ->get();
+	$lidas = DB::table('contact')->where('id_contact_box', 2)->orderby('date', 'asc')  ->get();
+	$arquivadas = DB::table('contact')->where('id_contact_box', 3)->orderby('date', 'asc')  ->get();
 	 ?>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Mensagens não lidas: <?php echo $qtdnaolida ?></a></li>
-    <li><a data-toggle="tab" href="#menu1">Mensagens Lidas: <?php echo $qtdlidas ?></a></li>
-    <li><a data-toggle="tab" href="#menu2">Mensagens Arquivadas: <?php echo $qtdarquivadas ?></a></li>
-    <li><a data-toggle="tab" href="#menu3">Lixeira: <?php echo $qtdlixeira ?></a></li>
+
+<!-- Fazer contagens para alimentar as abas
+ e pegar dados para alimentar cada aba-->
+<div id="tabs">
+  <ul>
+    <li><a href="#home">Mensagens não lidas: <?php echo $qtdnaolida ?></a></li>
+    <li><a href="#menu1">Mensagens lidas: <?php echo $qtdlidas ?></a></li>
+    <li><a href="#menu2">Mensagens arquivadas: <?php echo $qtdarquivadas ?></a></li>
   </ul>
-
- <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-	@foreach($naolidas as $n)
-    <a class="article" href="/noticias/{{$n->id}}">
-      <div class="article-body">
-        <h2 class="article-title">Assunto: {{$n->subject}}</h2>
-        <p class="article-content">Enviado por:{{$n->name}}</p>
-        <footer class="article-info">
-          <span>{{$n->date}}</span>
-        </footer>
-      </div>    
-    </a>
+  <div id="home">
+      @foreach($naolidas as $n)
+        <a class="article" href="/mensagem/{{$n->id}}">
+          <div class="article-body">
+            <h2 class="article-title">Assunto: {{$n->subject}}</h2>
+            <p class="article-content">Enviado por: {{$n->name}}</p>
+            <footer class="article-info">
+              <span>Data de envio: {{date('d/m/Y', strtotime($n->date))}}</span>
+            </footer>
+          </div>    
+        </a>
+        @endforeach     
+  </div>
+  <div id="menu1">
+    @foreach($lidas as $n)
+      <a class="article" href="/mensagem/{{$n->id}}">
+        <div class="article-body">
+             <h2 class="article-title">Assunto: {{$n->subject}}</h2>
+             <p class="article-content">Enviado por: {{$n->name}}</p>
+            <footer class="article-info">
+              <span>Data de envio: {{date('d/m/Y', strtotime($n->date))}}</span>
+          </footer>
+        </div>    
+      </a>
+    @endforeach 
+  </div>
+  <div id="menu2">
+    @foreach($arquivadas as $n)
+      <a class="article" href="/mensagem/{{$n->id}}">
+        <div class="article-body">
+             <h2 class="article-title">Assunto: {{$n->subject}}</h2>
+            <p class="article-content">Enviado por: {{$n->name}}</p>
+            <footer class="article-info">
+              <span>Data de envio: {{date('d/m/Y', strtotime($n->date))}}</span>
+          </footer>
+        </div>    
+      </a>
     @endforeach
-	</div>	
-    <div id="menu1" class="tab-pane fade in active">
-	@foreach($lidas as $n)
-    <a class="article" href="/noticias/{{$n->id}}">
-      <div class="article-body">
-        <h2 class="article-title">Assunto: {{$n->subject}}</h2>
-        <p class="article-content">Enviado por:{{$n->name}}</p>
-        <footer class="article-info">
-          <span>{{$n->date}}</span>
-        </footer>
-      </div>    
-    </a>
-    @endforeach    	
-    </div>  
-    <div id="menu2" class="tab-pane fade in active">
-	@foreach($arquivadas as $n)
-    <a class="article" href="/noticias/{{$n->id}}">
-      <div class="article-body">
-        <h2 class="article-title">Assunto: {{$n->subject}}</h2>
-        <p class="article-content">Enviado por:{{$n->name}}</p>
-        <footer class="article-info">
-          <span>{{$n->date}}</span>
-        </footer>
-      </div>    
-    </a>
-    @endforeach    	
-    </div>     
-    <div id="menu3" class="tab-pane fade in active">
-	@foreach($lixeira as $n)
-    <a class="article" href="/noticias/{{$n->id}}">
-      <div class="article-body">
-        <h2 class="article-title">Assunto: {{$n->subject}}</h2>
-        <p class="article-content">Enviado por:{{$n->name}}</p>
-        <footer class="article-info">
-          <span>{{$n->date}}</span>
-        </footer>
-      </div>    
-    </a>
-    @endforeach    	
-    </div>         	
-    </div>
- </div>    
+  </div>
+</div>
 
-@stop
+<br>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs({
+      collapsible: true
+    });
+  } );
+  </script>
+  @stop

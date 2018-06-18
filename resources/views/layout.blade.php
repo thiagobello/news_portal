@@ -102,7 +102,7 @@
                             <li><a href="/minhas-noticias">Minhas Notícias</a></li>
                             <li><a href="/criar-usuario">Criar Usuário</a></li>
                             <li><a href="/minha-conta"> Editar Perfil </a></li>
-                            <li><a href="">Mensagens</a></li>
+                            <li><a href="/caixa-mensagens">Mensagens</a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
                     </div>
