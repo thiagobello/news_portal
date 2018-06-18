@@ -170,7 +170,7 @@ class NewsController extends Controller
          $news->approved_by = $id;
          $news-> save();
         }
-    return redirect('/noticias/pendentes');  
+    return redirect('/minhas-noticias');  
         }
       return redirect('/home');
 
@@ -186,7 +186,7 @@ class NewsController extends Controller
          $news->reproved_by = $id;
          $news-> save();
         }
-    return redirect('/noticias/pendentes');  
+    return redirect('/minhas-noticias');  
         }
       return redirect('/home');
     }

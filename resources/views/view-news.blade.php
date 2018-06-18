@@ -16,6 +16,12 @@
 <?php if (Auth::Check()): $id = Auth()->user()->id_acess_level;?>
 	<?php if ($id == 1): ?>
 		<a href="/noticias-editar/{{$n->id}}"><button class="btn btn-info"> Editar </button><br></a>
+    
+
+
+
+
+
 	<?php endif ?>
 	<?php if (!$id == 1): ?>
 		<?php if ($n->status != 'A'): ?>

@@ -8,14 +8,14 @@
 	$qtdativos = DB::table('news')->where('users_id', $id)->where('status', 'A')->count();
 	$qtdpendentes = DB::table('news')->where('status', 'P')->count();
 	$qtdreprovados= DB::table('news')->where('users_id', $id)->where('status', 'R')->count();
-	$qtdaprovadospormim = DB::table('news')->where('approved_by', $id)->count();
-	$qtdreprovadospormim = DB::table('news')->where('reproved_by', $id)->count();
+	$qtdaprovadospormim = DB::table('news')->where('approved_by', $id)->where('status', 'A')->count();
+	$qtdreprovadospormim = DB::table('news')->where('reproved_by', $id)->where('status', 'R')->count();
 
     $ativos = db::table('news')->where('users_id', $id)->where('status', 'A')->get();
     $pendentes = db::table('news')->where('status', 'P')->get();
     $reprovados = db::table('news')->where('users_id', $id)->where('status', 'R')->get();
     $aprovadospormim = db::table('news')->where('approved_by', $id)->where('status', 'A')->get();
-    $reprovadospormim = db::table('news')->where('reproved_by', $id)->get();
+    $reprovadospormim = db::table('news')->where('reproved_by', $id)->where('status', 'R')->get();
  ?>
 <div id="tabs">
   <ul>
