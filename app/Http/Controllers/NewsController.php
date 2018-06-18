@@ -13,7 +13,6 @@ use File;
 use Image;
 use Response;
 
-
 class NewsController extends Controller
 
 {
@@ -142,8 +141,6 @@ class NewsController extends Controller
             
         return view('home', array('news' => $news,'category' => $category,'partner' => $partner));
     }
-
-
 
    // Noticias mais acessadas
     public function MostAcessed(){

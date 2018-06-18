@@ -11,7 +11,7 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    

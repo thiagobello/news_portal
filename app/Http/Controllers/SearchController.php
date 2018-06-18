@@ -13,19 +13,16 @@ use File;
 use Image;
 use Response;
 
-class SearchController extends Controller
-{
+
+class SearchController extends Controller{
+
 
     // Procurar noticias
     public function SearchNews(){
        $txt = Request::input('txt');
+
        $news = News::where('notice', 'like', '%' . $txt . '%')
         ->orWhere('title', 'like', '%' . $txt . '%') ->where('status', 'A')->paginate(2);
-        //dd($news);
-        //$error = "Nenhuma notícia foi encontrada!";
-        //if ($news == null) {
-        //    return view('search-news') -> with ('news', $error);
-        //}
        return view('search-news') -> with ('news', $news);
     }
 }

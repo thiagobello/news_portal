@@ -36,19 +36,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {   if (!Auth::Guest()) {
-       $id = Auth()->user()->id_acess_level;
-        if ($id==1) {
-            return redirect('/register');
-        }
-    }
-        return redirect('/login');
-  
-     
-     //   $this->middleware('guest');
-    }
-
+ 
     /**
      * Get a validator for an incoming registration request.
      *

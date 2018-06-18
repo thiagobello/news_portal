@@ -44,7 +44,7 @@
     Login
 
 </button>
-
+ <!-- Modal formulário de Login -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="">
     <div class="modal-dialog modal-login" role="document">
         <div class="modal-content">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-info">Entrar</button>
-                        <a href="/home" align="right"> Esqueci minha senha</a>
+                        <a href="/recuperar-senha" align="right"> Esqueci minha senha</a>
                     </form> 
                    
                 </div>
@@ -99,8 +99,9 @@
                             <li><a href="/noticias/">Criar Notícia</a></li>
                             <li><a href="/categorias">Categorias</a></li>
                             <li><a href="/minhas-noticias">Minhas Notícias</a></li>
-                            <li><a href="/register">Criar Usuário</a></li>
+                            <li><a href="/criar-usuario">Criar Usuário</a></li>
                             <li><a href="/minha-conta"> Editar Perfil </a></li>
+                            <li><a href="/caixa-mensagens">Mensagens</a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
                     </div>

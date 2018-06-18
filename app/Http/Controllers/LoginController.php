@@ -29,13 +29,44 @@ class LoginController extends Controller
     	$id = Auth()->user()->id;
     	$name = Request::input('name');
     	$email = Request::input('email');
-    	if (!Request::input('password') == "") {
     		$password = bcrypt(Request::input('password'));
     		DB::table('users')->where('id', $id)
     			->update(['name' => $name, 'email' => $email, 'password' => $password]);
-    	}
  		DB::table('users')->where('id', $id)
     		->update(['name' => $name, 'email' => $email]);
     	return redirect('/home');
     }
-}
+ 
+
+    public function Form(){
+        if (Auth::Guest()) {
+            return redirect('/login');
+        }
+        $id = Auth()->user()->id_acess_level;
+       if ($id == 1) {
+            $access_level = DB::table('access_level')->get();
+            return view('newuser')->with('access_level', $access_level);
+        }
+        return redirect('/login');
+
+
+    }
+
+    public function NewUser(){
+        if (!Auth()->user()->id_acess_level == 1) {
+            return redirect('/login');
+        }
+
+        $name = Request::input('name');
+        $email = Request::input('email');
+        $id_acess_level = Request::input('id_acess');
+        $password = bcrypt(Request::input('password'));
+        DB::table('users')->insert(['name' => $name, 'email' => $email, 'id_acess_level' => $id_acess_level, 'password' => $password]);
+        return redirect('/criar-usuario');
+    }
+
+    public function Forgot(){
+        return view('auth\passwords\reset');
+    }
+
+}    

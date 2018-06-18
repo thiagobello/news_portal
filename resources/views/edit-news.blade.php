@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('text')
-
-
+<?php
+  date_default_timezone_set('America/Sao_Paulo');
+  $data = date('d/m/y');
+?>
 <form method="post" id="send_form" enctype="multipart/form-data" onSubmit="return verify()">
 
 <input type="hidden" id="id" name="id" value="{{$news->id}}">
@@ -24,8 +26,8 @@
      <span class="bmd-help">Aqui você vai por o titulo da noticia.</span>
   </div>
   <div class="form-group">
-    <label class="label-control">Data de Publicação</label>
-    <input name="date" type="text" class="form-control datetimepicker" id="date" value="{{$news->date}}">
+    <label class="label-control">Data de Edição</label>
+    <input name="date" type="text" class="form-control datetimepicker" id="date" value="<?php echo $data?>" readonly="true"/> 
   </div>
   
   

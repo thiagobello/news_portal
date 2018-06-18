@@ -32,7 +32,7 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content"  style="max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span><br>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    
@@ -46,12 +46,12 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    
     </a>
-    @endforeach 
+    @endforeach      
   </div>
   <div id="menu2">
     @foreach($reprovados as $n)
@@ -60,7 +60,7 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    
@@ -74,7 +74,7 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    
@@ -88,7 +88,7 @@
         <h2 class="article-title">{{$n->title}}</h2>
         <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
         <footer class="article-info">
-          <span>{{$n->date}}</span>
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
           <span>{{$n->views}} Visitas</span>
         </footer>
       </div>    

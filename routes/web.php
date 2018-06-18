@@ -37,11 +37,18 @@ Route::post('/login/entrar', 'Auth\LoginController@login');
 Route::get('/logout', 'LoginController@Logout');
 Route::get('/minha-conta', 'LoginController@FormEdit');
 Route::post('/minha-conta/alterar','LoginController@Edit');
+Route::get('/criar-usuario', 'LoginController@Form');
+Route::post('/criar-usuario/novo', 'LoginController@NewUser');
+Route::get('/recuperar-senha', 'LoginController@Forgot');
 
 
 //Rotas de Contato
 Route::get('/contato', 'ContactController@Form');
 Route::post('/contato/enviar', 'ContactController@SendContact');
+Route::get('/caixa-mensagens', 'ContactController@ContactBox');
+Route::get('/mensagem/{id}','ContactController@ViewContact')->where('id', '[0-9]+');
+Route::Get('/mensagem/arquivar/{id}', 'ContactController@arquivar')->where('id', '[0-9]+');
+Route::Get('/mensagem/deletar/{id}', 'ContactController@Delete')->where('id', '[0-9]+');
 
 //Rotas de Parceiros
 Route::get('/parceiros', 'PartnersController@partners');
