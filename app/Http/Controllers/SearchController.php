@@ -21,8 +21,7 @@ class SearchController extends Controller{
     public function SearchNews(){
        $txt = Request::input('txt');
 
-       $news = News::where('notice', 'like', '%' . $txt . '%')
-        ->orWhere('title', 'like', '%' . $txt . '%') ->where('status', 'A')->paginate(2);
+       $news = News::where('notice', 'like', '%' . $txt . '%')->orWhere('title', 'like', '%' . $txt . '%')->orderByRaw('date DESC')->orderByRaw('id DESC')->paginate(2);
        return view('search-news') -> with ('news', $news);
     }
 }

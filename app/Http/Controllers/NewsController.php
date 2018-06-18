@@ -105,9 +105,15 @@ class NewsController extends Controller
         $date = $request->input('date');
         $notice = $request->input('notice');
 
-        DB::table('news')->where('id',$request->id)->update(array('category_id'=>$category, 'title'=>$title, 'creation_date'=>$date, 'notice'=>$notice));
+        DB::table('news')->where('id',$request->id)->update(array('category_id'=>$category, 'title'=>$title, 'date'=>$date, 'notice'=>$notice));
 
        return $this->returnId($id);
+    }
+
+    public function deleteNews($id)
+    {
+        DB::table('news')->where('id',$id)->delete();
+        return view('mynews');
     }
 
     public function list()
@@ -135,7 +141,7 @@ class NewsController extends Controller
 
     public function home()
     {
-        $news = News::where('status', 'A')->paginate(2);
+        $news = News::where('status', 'A') ->orderByRaw('date DESC')->orderByRaw('id DESC')->paginate(2);
         $category = DB::select('select * from category');
         $partner = DB::select('select * from partners');
             

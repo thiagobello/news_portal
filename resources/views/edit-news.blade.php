@@ -9,7 +9,10 @@
 
 <input type="hidden" id="id" name="id" value="{{$news->id}}">
 
- <input type='file' id="image" name="image" accept="image/*" required />
+<label for="exampleInput1" class="bmd-label-floating">Capa da Notícia</label>
+<br>
+ <input type='file' id="image" name="image" accept="image/*"/>
+<br>
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Categoria</label>
@@ -37,7 +40,7 @@
 
 
 
-  <button type="submit" class="btn btn-info">Publicar</button>
+  <button type="submit" class="btn btn-info">Editar</button>
   
 </form>
 

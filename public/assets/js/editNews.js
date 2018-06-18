@@ -1,6 +1,5 @@
-
 $('#send_form').on('submit',function(e){
-    console.log('tentou');
+
 e.preventDefault();
 
 var id = $('#id').val();
@@ -34,6 +33,7 @@ var notice = $('#notice').val();
             processData: false,
             data: formData 
         })
+    alert("Notícia editada com sucesso =)");
     });
 }); 
 
