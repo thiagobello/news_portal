@@ -105,7 +105,7 @@ class NewsController extends Controller
         $date = $request->input('date');
         $notice = $request->input('notice');
 
-        DB::table('news')->where('id',$request->id)->update(array('category_id'=>$category, 'title'=>$title, 'date'=>$date, 'notice'=>$notice, 'repproved_by' => 'null', 'status' => 'P'));
+        DB::table('news')->where('id',$request->id)->update(array('category_id'=>$category, 'title'=>$title, 'date'=>$date, 'notice'=>$notice, 'reproved_by' => null, 'status' => 'P'));
 
        return $this->returnId($id);
     }
