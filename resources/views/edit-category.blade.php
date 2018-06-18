@@ -1,15 +1,13 @@
 @extends('layout')
 
 @section('text')
-<form id="send_form" class="form-align"  method="post" onSubmit="return verify()" action="/categorias/adiciona">
-
-  <input type="hidden" name="_token" value="{{csrf_token()}}" />
+<form id="send_form" class="form-align"  method="post" onSubmit="return verify()" action="/categoria-salvar/{{$edit->id}}">
 
   <div class="form-group">
-     <label for="exampleInput1" class="bmd-label-floating">Digite o nome da nova categoria.</label>
-     <input  name="category_m" class="form-control">
+     <label for="exampleInput1" class="bmd-label-floating">Nome</label>
+     <input  name="categorys" class="form-control" value="{{$edit->name}}">
   </div>
-  <button type="submit" class="btn btn-info">Adicionar</button>
+  <button type="submit" class="btn btn-info">Atualizar</button>
 
 </form>
 <table class = "table table-striped table-bordered table-hover">

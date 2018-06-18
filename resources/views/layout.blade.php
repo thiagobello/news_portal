@@ -147,9 +147,6 @@
                             @endforeach
                             </div>
                     </li>
-                      <li class="nav-item">
-                        <a href="{{action('NewsController@MostAcessed')}}" class="nav-link">Mais Acessadas</a>
-                    </li>
                      </li>
                       <li class="nav-item">
                         <a href="{{action('ContactController@Form')}}" class="nav-link">Fale Conosco</a>

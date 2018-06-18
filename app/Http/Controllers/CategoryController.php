@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Request;
 use Auth;
 use news_portal\News;
+use news_portal\Category;
 
 class CategoryController extends Controller
 {
@@ -40,14 +41,38 @@ class CategoryController extends Controller
 
 	public function newsByCategory($id)
 	{
-		$news = News::where('status', '1')->where('category_id', $id)->paginate(2);
+		$news = News::where('status', 'A')->where('category_id', $id)->paginate(2);
 		$category = DB::select('select * from category');
-		return  view('home', array('news' => $news,'category' => $category));
+		return  view('news-by-category', array('news' => $news,'category' => $category));
 	}
 
     public function view($id)
     {
     	$category = Category::find($id);
     	return view('home')->with('c',$category);
+    }
+
+     public function editCategory($id)
+    {
+        $edit = Category::find($id);
+        $category = DB::select('select * from category');
+        return view('edit-category', array('category' => $category,'edit' => $edit));
+    }
+
+    public function saveEditCategory($id)
+    {
+		$name = Request::input('categorys');
+        DB::table('category')->where('id',$id)->update(array('name'=>$name));
+
+        $category = DB::select('select * from category');
+       	return view('category') -> with('category', $category);
+    }
+
+    public function deleteCategory($id)
+    {
+		DB::table('category')->where('id',$id)->delete();
+
+        $category = DB::select('select * from category');
+       	return view('category') -> with('category', $category);
     }
 }	

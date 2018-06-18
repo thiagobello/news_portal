@@ -136,7 +136,7 @@ class NewsController extends Controller
 
     public function home()
     {
-        $news = News::where('status', 'A') ->paginate(2);
+        $news = News::where('status', 'A')->paginate(2);
         $category = DB::select('select * from category');
         $partner = DB::select('select * from partners');
             
@@ -144,17 +144,6 @@ class NewsController extends Controller
     }
 
 
-    // Procurar noticias
-    public function SearchNews(){
-       $txt = Request::input('txt');
-       $news = DB::table('news')->where('notice', 'like', '%' . $txt . '%')
-        ->orWhere('title', 'like', '%' . $txt . '%') ->where('status', 'A') ->get();
-        $error = "Nenhuma notícia foi encontrada!";
-        if (empty($news)) {
-            return view('search-news') -> with ('news', $error);
-        }
-       return view('search-news') -> with ('news', $news);
-    }
 
    // Noticias mais acessadas
     public function MostAcessed(){
@@ -207,7 +196,7 @@ class NewsController extends Controller
 
         $id = auth()->user()->id;
         $news = db::table('news')->where('users_id', $id)->where('status', 'A')->get();
-        return $news;
+        return view('mynews')->with('news', $news);  
     }
 
     // Ver as notícias pendentes do usuário

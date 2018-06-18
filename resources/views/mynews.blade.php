@@ -26,72 +26,73 @@
     <li><a href="#menu4">Reprovadas por mim: <?php echo $qtdreprovadospormim ?></a></li>
   </ul>
   <div id="home">
-      @foreach($ativos as $n)
-        <a class="article" href="/noticias/{{$n->id}}">
-          <div class="article-body">
-            <h2 class="article-title">{{$n->title}}</h2>
-            <p class="article-content">{!!$n->notice!!}</p>
-            <footer class="article-info">
-              <span>{{$n->views}} Visitas</span>
-            </footer>
-          </div>    
-        </a>
-        @endforeach     
+    @foreach($ativos as $n)
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style="max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{$n->date}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
+   @endforeach     
   </div>
   <div id="menu1">
     @foreach($pendentes as $n)
-      <a class="article" href="/noticias/pendentes/{{$n->id}}">
-        <div class="article-body">
-          <h2 class="article-title">{{$n->title}}</h2>
-          <p class="article-content">{!!$n->notice!!}</p>
-          <footer class="article-info">
-            <span>{{$n->date}}</span>
-            <span>{{$n->views}} Visitas</span>
-          </footer>
-        </div>    
-      </a>
+    <a class="article" href="/noticias/pendentes/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{$n->date}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
     @endforeach 
   </div>
   <div id="menu2">
     @foreach($reprovados as $n)
-      <a class="article" href="/noticias/{{$n->id}}">
-        <div class="article-body">
-          <h2 class="article-title">{{$n->title}}</h2>
-          <p class="article-content">{!!$n->notice!!}</p>
-          <footer class="article-info">
-            <span>{{$n->date}}</span>
-            <span>{{$n->views}} Visitas</span>
-          </footer>
-        </div>    
-      </a>
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{$n->date}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
     @endforeach
   </div>
   <div id="menu3">
     @foreach($aprovadospormim as $n)
-      <a class="article" href="/noticias/{{$n->id}}">
-        <div class="article-body">
-          <h2 class="article-title">{{$n->title}}</h2>
-          <p class="article-content">{!!$n->notice!!}</p>
-          <footer class="article-info">
-            <span>{{$n->date}}</span>
-            <span>{{$n->views}} Visitas</span>
-          </footer>
-        </div>    
-      </a>
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{$n->date}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
     @endforeach
   </div>
   <div id="menu4">
     @foreach($reprovadospormim as $n)
-      <a class="article" href="/noticias/{{$n->id}}">
-        <div class="article-body">
-          <h2 class="article-title">{{$n->title}}</h2>
-          <p class="article-content">{!!$n->notice!!}</p>
-          <footer class="article-info">
-            <span>{{$n->date}}</span>
-            <span>{{$n->views}} Visitas</span>
-          </footer>
-        </div>    
-      </a>
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{$n->date}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
     @endforeach
   </div>
 </div>

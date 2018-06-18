@@ -5,11 +5,12 @@ Route::get('/home','NewsController@home');
 Route::post('/noticias-criar','NewsController@create');
 Route::get('/noticias/{id}','NewsController@view')->where('id', '[0-9]+');
 Route::get('/noticias','NewsController@list');
-Route::get('/noticias/buscar/{txt}', 'NewsController@SearchNews');
+Route::get('/noticias/buscar/{txt}', 'SearchController@SearchNews');
 Route::get('/noticias/pendentes', 'NewsController@NewsWaiting');
 Route::get('/noticias/pendentes/{id}','NewsController@View')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/aprovar','NewsController@ApproveNews')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/reprovar','NewsController@ReproveNews')->where('id', '[0-9]+');
+
 Route::post('/save-image/{id}', 'NewsController@saveImage')->where('id', '[0-9]+');
 Route::get('/image/{id}', 'NewsController@getImage')->where('id', '[0-9]+');
 Route::get('/mais-acessadas', 'NewsController@MostAcessed');
@@ -24,7 +25,10 @@ Route::post('/categoria/detalhe/{id}', 'CategoryController@Details');
 Route::get('/categoria/{id}','CategoryController@view')->where('id', '[0-9]+');
 Route::get('/categoria', 'CategoryController@list');
 Route::get('/categorias', 'CategoryController@list');
-Route::get('/noticias-categoria/{id}', 'CategoryController@newsByCategory');
+Route::get('/noticias-categoria/{id}', 'CategoryController@newsByCategory')->where('id', '[0-9]+');
+Route::get('/categoria-editar/{id}','CategoryController@editCategory')->where('id', '[0-9]+');
+Route::post('/categoria-salvar/{id}','CategoryController@saveEditCategory')->where('id', '[0-9]+');
+Route::get('/categoria-excluir/{id}','CategoryController@deleteCategory')->where('id', '[0-9]+');
 
 //Rotas de Login
 Auth::routes();	

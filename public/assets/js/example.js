@@ -1,3 +1,9 @@
+function CKupdate(){
+    for ( instance in CKEDITOR.instances ){
+        CKEDITOR.instances[instance].updateElement();
+    }
+    CKEDITOR.instances[instance].setData('Digite a notícia...');
+} 
 
 $('#send_form').on('submit',function(e){
 
@@ -7,6 +13,9 @@ var user = $('#user').val();
 var category = $('#category').val();
 var title = $('#title').val();
 var date = $('#date').val(); // Caso esteja usando biblioteca de data, o método muda
+
+CKupdate();
+
 var notice = $('#notice').val();
 
 
@@ -33,9 +42,13 @@ var notice = $('#notice').val();
             contentType: false,
             cache: false,
             processData: false,
-            data: formData 
+            data: formData
         })
+    alert("Noticia cadastrada com sucesso :)");
+    document.getElementById("send_form").reset();
+    CKupdate();
     });
+
 });
     
 

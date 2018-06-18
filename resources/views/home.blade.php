@@ -15,7 +15,7 @@
         echo '<div id="slide1" class="mySlides"> 
                 <a target="_blank" href="/noticias/'. $n->id. '"> 
                   <img src="/image/'.$n->id .'" style="width:100%"> 
-                  <div class="text" style="font-size:200%; text-align: left; font-weight: bold;line-height: 150%; ">' . $n->title .'</div>
+                  <div class="text" style="font-size:200%; text-align: left; font-weight: bold; line-height: 150%; ">' . $n->title .'</div>
                 </a>
               </div>';
       }
@@ -114,7 +114,7 @@
     <?php $utility = DB::select('select * from utility');?>
     <table class = "table table-striped table-bordered table-hover">
       @foreach ($utility as $u)
-        <tr>
+        <tr style="overflow-x:auto;">
           <td>Utilidade</td>
           <td>Valor</td>
           <td>Data de Atualização</td>
