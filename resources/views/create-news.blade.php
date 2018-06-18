@@ -14,7 +14,7 @@
 
 <label for="exampleInput1" class="bmd-label-floating">Capa da Notícia</label>
 <br>
- <input type='file' id="image" name="image" accept="image/*"/>
+ <input type='file' id="image" name="image" accept="image/*" required/>
 <br>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Quem está publicando?</label>
@@ -32,7 +32,7 @@
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Título da Noticia</label>
-     <input name="title" class="form-control" id="title">
+     <input name="title" class="form-control" id="title" required>
      <span class="bmd-help">Aqui você vai por o titulo da noticia.</span>
   </div>
   <div class="form-group">

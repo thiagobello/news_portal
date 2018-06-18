@@ -8,11 +8,11 @@
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Email</label>
-     <input  name="email" class="form-control" value="{{old('users_id')}}">
+     <input  name="email" class="form-control" value="{{old('users_id')}}" required>
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Senha</label>
-     <input type="password" name="password" class="form-control" value="{{old('users_id')}}">
+     <input type="password" name="password" class="form-control" value="{{old('users_id')}}" required>
   </div>
 
 

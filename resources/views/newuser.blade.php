@@ -6,12 +6,12 @@
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Nome</label>
-     <input name="name" class="form-control" value="{{old('name')}}">
+     <input name="name" class="form-control" value="{{old('name')}}" required>
      <span class="bmd-help">Aqui você vai inserir o nome do usuário.</span>
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">E-Mail</label>
-     <input name="email" class="form-control" value="{{old('email')}}">
+     <input name="email" class="form-control" value="{{old('email')}}" required>
      <span class="bmd-help">Aqui você vai inserir o E-Mail do usuário.</span>
   </div>
   <div class="form-group">
@@ -25,7 +25,7 @@
   </div>
   <div class="form-group">
     <label class="label-control">Senha</label>
-    <input name="password" type="password" class="form-control datetimepicker" value="{{old('subject')}}"/>
+    <input name="password" type="password" class="form-control datetimepicker" value="{{old('subject')}}" required/>
          <span class="bmd-help">Aqui você vai inserir a senha do usuário.</span>
   </div>
 

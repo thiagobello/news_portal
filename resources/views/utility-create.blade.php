@@ -10,11 +10,11 @@
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Qual a utilidade?</label>
-     <input  name="name" class="form-control" value="{{old('name')}}">
+     <input  name="name" class="form-control" value="{{old('name')}}" required>
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Qual o valor?</label>
-     <input  name="value" class="form-control" value="{{old('value')}}">
+     <input  name="value" class="form-control" value="{{old('value')}}" required>
   </div>
   <div class="form-group">
     <label class="label-control">Data de Atualização</label>

@@ -9,7 +9,7 @@
 
 <input type="hidden" id="id" name="id" value="{{$news->id}}">
 
- <input type='file' id="image" name="image" accept="image/*"/>
+ <input type='file' id="image" name="image" accept="image/*" required />
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Categoria</label>
@@ -22,7 +22,7 @@
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Título da Noticia</label>
-     <input name="title" class="form-control" id="title" value="{{$news->title}}">
+     <input name="title" class="form-control" id="title" value="{{$news->title}}" required>
      <span class="bmd-help">Aqui você vai por o titulo da noticia.</span>
   </div>
   <div class="form-group">

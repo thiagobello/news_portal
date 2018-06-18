@@ -5,7 +5,7 @@
 
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Nome</label>
-     <input  name="categorys" class="form-control" value="{{$edit->name}}">
+     <input  name="categorys" class="form-control" value="{{$edit->name}}" required>
   </div>
   <button type="submit" class="btn btn-info">Atualizar</button>
 

@@ -10,15 +10,15 @@
 <form action="/minha-conta/alterar" method="post">
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Seu nome: </label>
-     <input  name="name" class="form-control" id="name" type="text" value="<?php echo $name ?>">
+     <input  name="name" class="form-control" id="name" type="text" value="<?php echo $name ?>" required>
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Seu email: </label>
-     <input  name="email" class="form-control" id="email" type="text" value="<?php echo $email ?>">
+     <input  name="email" class="form-control" id="email" type="text" value="<?php echo $email ?>" required>
   </div>
   <div class="form-group">
      <label for="exampleInput1" class="bmd-label-floating">Senha: </label>
-     <input  name="password" class="form-control" id="email" type="password">
+     <input  name="password" class="form-control" id="email" type="password" required>
   </div>  
 
 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
