@@ -23,8 +23,9 @@
     <script src="{{ asset('assets/js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('assets/js/material-kit.js?v=2.0.3') }}"></script>
 
-    <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
-       
+
+
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
 
 
     <title>E-News</title> 

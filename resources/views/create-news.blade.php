@@ -43,7 +43,7 @@
   
   <textarea name="notice" id="notice" rows="10" cols="80">Digite a notícia...</textarea>
   
-  <script>CKEDITOR.replace( 'notice' );</script>
+  <script>CKEDITOR.replace('notice');</script>
 
 
 
