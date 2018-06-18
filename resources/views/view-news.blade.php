@@ -27,6 +27,9 @@
 		<?php if ($n->status != 'A'): ?>
 			<a href="/noticias-editar/{{$n->id}}"><button class="btn btn-info"> Editar </button><br></a>
 		<?php endif ?>
+		<?php if ($n->status == 'R'): ?>
+			<a href="/noticias-editar/{{$n->id}}"><button class="btn btn-info"> Editar </button><br></a>
+		<?php endif ?>
 	<?php endif ?>
 <?php endif ?>
 </div>

@@ -5,6 +5,7 @@
  e pegar dados para alimentar cada aba-->
 <?php 
 	$id = auth()->user()->id;
+  $idacess = auth()->user()->id_acess_level;
 	$qtdativos = DB::table('news')->where('users_id', $id)->where('status', 'A')->count();
 	$qtdpendentes = DB::table('news')->where('status', 'P')->count();
 	$qtdreprovados= DB::table('news')->where('users_id', $id)->where('status', 'R')->count();
@@ -17,6 +18,8 @@
     $aprovadospormim = db::table('news')->where('approved_by', $id)->where('status', 'A')->get();
     $reprovadospormim = db::table('news')->where('reproved_by', $id)->where('status', 'R')->get();
  ?>
+<?php if ($idacess == 1): ?>
+  
 <div id="tabs">
   <ul>
     <li><a href="#home">Notícias ativas: <?php echo $qtdativos ?></a></li>
@@ -96,6 +99,66 @@
     @endforeach
   </div>
 </div>
+<?php endif ?>
+<?php 
+  $qtdativos1 = DB::table('news')->where('users_id', $id)->where('status', 'A')->count();
+  $qtdpendentes1 = DB::table('news')->where('status', 'P')->where('users_id', $id)->count();
+  $qtdreprovados1 = DB::table('news')->where('users_id', $id)->where('status', 'R')->count();
+
+    $ativos1 = db::table('news')->where('users_id', $id)->where('status', 'A')->get();
+    $pendentes1 = db::table('news')->where('status', 'P')->where('users_id', $id)->get();
+    $reprovados1 = db::table('news')->where('users_id', $id)->where('status', 'R')->get();
+ ?>
+ 
+  <div id="tabs">
+  <ul>
+    <li><a href="#home">Notícias ativas: <?php echo $qtdativos1 ?></a></li>
+    <li><a href="#menu1">Notícias pendentes: <?php echo $qtdpendentes1 ?></a></li>
+    <li><a href="#menu2">Notícias reprovadas: <?php echo $qtdreprovados1 ?></a></li>
+  </ul>
+  <div id="home">
+    @foreach($ativos1 as $n)
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style="max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span><br>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
+   @endforeach     
+  </div>
+  <div id="menu1">
+    @foreach($pendentes1 as $n)
+    <a class="article" href="/noticias/pendentes/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
+    @endforeach      
+  </div>
+  <div id="menu2">
+    @foreach($reprovados1 as $n)
+    <a class="article" href="/noticias/{{$n->id}}">
+      <div class="article-body">
+        <h2 class="article-title">{{$n->title}}</h2>
+        <p class="article-content"  style=" max-width: 80ch; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;">{!!$n->notice!!}</p>
+        <footer class="article-info">
+          <span>{{date('d/m/Y', strtotime($n->date))}}</span>
+          <span>{{$n->views}} Visitas</span>
+        </footer>
+      </div>    
+    </a>
+    @endforeach
+  </div>
+
 
 <br>
 

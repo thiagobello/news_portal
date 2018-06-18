@@ -88,7 +88,7 @@
             </li>
             <?php endif ?>
             <?php if (Auth::Check()):
-                $id = Auth()->user()->id_acess_level;?>
+                $id = Auth()->user()->id_access_level;?>
                 <?php if ($id == 1): ?>
                       <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -100,6 +100,8 @@
                             <li><a href="/categorias">Categorias</a></li>
                             <li><a href="/minhas-noticias">Minhas Notícias</a></li>
                             <li><a href="/usuarios">Usuários</a></li>
+                            <li><a href="/parceiros">Parceiros</a></li>
+                            <li><a href="/utilidades">Utilitários</a></li>
                             <li><a href="/minha-conta"> Editar Perfil </a></li>
                             <li><a href="/caixa-mensagens">Mensagens</a></li>
                             <li><a href="/logout">Sair</a></li> 
@@ -115,6 +117,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="/noticias">Criar Notícia</a></li>
                             <li><a href="/minhas-noticias">Minhas notícias</a></li>
+                            <li><a href="/minha-conta"> Editar Perfil </a></li>
                             <li><a href="/logout">Sair</a></li> 
                         </ul
                     </div>
