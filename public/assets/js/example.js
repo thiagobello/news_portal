@@ -44,7 +44,7 @@ var notice = $('#notice').val();
             processData: false,
             data: formData
         })
-    alert("Noticia cadastrada com sucesso :)");
+    alert("Noticia cadastrada com sucesso =)");
     document.getElementById("send_form").reset();
     CKupdate();
     });

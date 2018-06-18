@@ -11,7 +11,7 @@ class UtilityController extends Controller
 {
 	public function viewUtility()
 	{
-		$utility = DB::select('select id,name, from utility');
+		$utility = DB::select('select * from utility');
 		return view('utility-create') -> with('utility', $utility);
 	}
 

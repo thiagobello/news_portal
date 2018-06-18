@@ -29,6 +29,8 @@ var link = $('#link').val();
             processData: false,
             data: formData 
         })
+    alert("Parceiro cadastrado com sucesso =)");
+    document.getElementById("send_form").reset();
     });
 }); 
 

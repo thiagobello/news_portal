@@ -28,8 +28,8 @@ class CategoryController extends Controller
 		$name = Request::input('category_m');
 
 		DB::insert('insert into category values(null, ?)', array($name));
-
-		return view('category-new') -> with('name', $name);
+		$category = DB::select('select * from category');
+		return view('category') -> with('category', $category);
 
 	}
 

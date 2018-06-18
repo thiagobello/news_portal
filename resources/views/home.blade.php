@@ -113,12 +113,12 @@
     <br>
     <?php $utility = DB::select('select * from utility');?>
     <table class = "table table-striped table-bordered table-hover">
-      @foreach ($utility as $u)
-        <tr style="overflow-x:auto;">
+              <tr style="overflow-x:auto;">
           <td>Utilidade</td>
           <td>Valor</td>
           <td>Data de Atualização</td>
         </tr>
+      @foreach ($utility as $u)
         <tr>
           <td> {{$u->name}}</td>
               <td> {{$u->value}}</td>
