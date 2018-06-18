@@ -41,7 +41,7 @@ class CategoryController extends Controller
 
 	public function newsByCategory($id)
 	{
-		$news = News::where('status', 'A')->where('category_id', $id)->paginate(2);
+		$news = News::where('status', 'A')->where('category_id', $id)->orderByRaw('date DESC')->orderByRaw('id DESC')->paginate(2);
 		$category = DB::select('select * from category');
 		return  view('news-by-category', array('news' => $news,'category' => $category));
 	}

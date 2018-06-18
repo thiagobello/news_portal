@@ -10,13 +10,13 @@ Route::get('/noticias/pendentes', 'NewsController@NewsWaiting');
 Route::get('/noticias/pendentes/{id}','NewsController@View')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/aprovar','NewsController@ApproveNews')->where('id', '[0-9]+');
 Route::get('/noticias/pendentes/{id}/reprovar','NewsController@ReproveNews')->where('id', '[0-9]+');
-
 Route::post('/save-image/{id}', 'NewsController@saveImage')->where('id', '[0-9]+');
 Route::get('/image/{id}', 'NewsController@getImage')->where('id', '[0-9]+');
 Route::get('/mais-acessadas', 'NewsController@MostAcessed');
 Route::get('/noticias-editar/{id}','NewsController@editNews')->where('id', '[0-9]+');
 Route::post('/noticias-editar-salvar','NewsController@saveEditNews');
 Route::get('/minhas-noticias', 'NewsController@MyNews');
+Route::get('/noticias-deletar/{id}', 'NewsController@deleteNews');
 
 //Rotas de Categorias
 Route::post('/categoria/adiciona', 'CategoryController@new');
